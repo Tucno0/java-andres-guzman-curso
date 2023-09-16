@@ -7,6 +7,8 @@ public class Automovil {
     private double cilindrada;
     private int capacidadEstanque = 40;
 
+    private TipoAutomovil tipo;
+
     // Atributos estáticos
     private static Color colorPlaca = Color.NARANJO;
     private static int capacidadEstanqueEstatico = 30;
@@ -99,16 +101,23 @@ public class Automovil {
     public void setId(int id) {
         this.id = id;
     }
+    public TipoAutomovil getTipo() {
+        return tipo;
+    }
+    public void setTipo(TipoAutomovil tipo) {
+        this.tipo = tipo;
+    }
 
     // Métodos sin argumentos
     public String verDetalle() {
         return  "\nauto.id = " + this.id +
-                "\nfabricante = " + this.fabricante +
-                "\nmodelo = " + this.modelo +
-                "\ncolor = " + this.color.getColor() +
-                "\ncolorPlaca = " + Automovil.colorPlaca.getColor() + // Atributo estático
-                "\ncilindrada = " + this.cilindrada +
-                "\ncapacidadEstanque = " + this.capacidadEstanque;
+                "\nauto.fabricante = " + this.fabricante +
+                "\nauto.modelo = " + this.modelo +
+                "\nauto.tipo = " + this.tipo.getDescripcion() +
+                "\nauto.color = " + this.color.getColor() +
+                "\nauto.colorPlaca = " + Automovil.colorPlaca.getColor() + // Atributo estático
+                "\nauto.cilindrada = " + this.cilindrada +
+                "\nauto.capacidadEstanque = " + this.capacidadEstanque;
     }
 
     public  String acelerar( int rmp ) {
