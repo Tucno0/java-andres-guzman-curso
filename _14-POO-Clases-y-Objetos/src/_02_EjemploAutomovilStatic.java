@@ -13,7 +13,7 @@ public class _02_EjemploAutomovilStatic {
 
         // Crear un objeto de la clase Automovil mazda
         Automovil mazda = new Automovil("Mazda", "CX-5", Color.ROJO, new Motor(3.5, TipoMotor.DIESEL));
-        mazda.setEstanque(new Estanque(45));
+//        mazda.setEstanque(new Estanque());
         mazda.setTipo(TipoAutomovil.PICKUP);
 
         // Crear un nuevo vehículo nissan
@@ -49,6 +49,7 @@ public class _02_EjemploAutomovilStatic {
         System.out.println("Descripción de subaru: " + tipoSubaru.getDescripcion());
         System.out.println("Número de puertas de subaru: " + tipoSubaru.getNumeroPuertas());
 
+        System.out.println("mazda.calcularConsumo() = " + mazda.calcularConsumo(300, 70));
         
     }
 }

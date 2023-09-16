@@ -64,42 +64,55 @@ public class Automovil {
     public String getFabricante() {
         return fabricante;
     }
+
     public void setFabricante(String fabricante) {
         this.fabricante = fabricante;
     }
+
     public String getModelo() {
         return modelo;
     }
+
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
+
     public Color getColor() {
         return color;
     }
+
     public void setColor(Color color) {
         this.color = color;
     }
+
     public static Color getColorPlaca() {
         return colorPlaca;
     }
+
     public static void setColorPlaca(Color colorPlaca) {
         Automovil.colorPlaca = colorPlaca;
     }
+
     public static int getCapacidadEstanqueEstatico() {
         return estanqueEstatico;
     }
+
     public static void setCapacidadEstanqueEstatico(int estanqueEstatico) {
         Automovil.estanqueEstatico = estanqueEstatico;
     }
+
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
+
     public TipoAutomovil getTipo() {
         return tipo;
     }
+
     public void setTipo(TipoAutomovil tipo) {
         this.tipo = tipo;
     }
@@ -113,6 +126,10 @@ public class Automovil {
     }
 
     public Estanque getEstanque() {
+        if (estanque == null) {
+            this.estanque = new Estanque();
+        }
+
         return estanque;
     }
 
@@ -138,17 +155,26 @@ public class Automovil {
 
     // Métodos sin argumentos
     public String verDetalle() {
-        return  "\nauto.id = " + this.id +
+        String detalle = "\nauto.id = " + this.id +
                 "\nauto.fabricante = " + this.fabricante +
-                "\nauto.modelo = " + this.modelo +
-                "\nauto.tipo = " + this.tipo.getDescripcion() +
-                "\nauto.color = " + this.color.getColor() +
-                "\nauto.colorPlaca = " + Automovil.colorPlaca.getColor() + // Atributo estático
-                "\nauto.cilindrada = " + this.motor.getCilindrada() +
-                "\nauto.estanque = " + this.estanque.getCapacidad();
+                "\nauto.modelo = " + this.modelo;
+
+        if (this.getTipo() != null) {
+            detalle += "\nauto.tipo = " + this.tipo.getDescripcion();
+        }
+
+        detalle += "\nauto.color = " + this.color.getColor() +
+                "\nauto.colorPlaca = " + Automovil.colorPlaca.getColor(); // Atributo estático
+        if (this.motor != null) {
+            detalle += "\nauto.cilindrada = " + this.motor.getCilindrada();
+        }
+
+        detalle += "\nauto.estanque = " + this.getEstanque().getCapacidad();
+
+        return detalle;
     }
 
-    public  String acelerar( int rmp ) {
+    public String acelerar(int rmp) {
         return "El automovil " + this.modelo + " acelera a " + rmp + " rpm";
     }
 
@@ -157,7 +183,7 @@ public class Automovil {
     }
 
     // Métodos con argumentos
-    public String acelerarFrenar( int rmp ) {
+    public String acelerarFrenar(int rmp) {
         String acelerar = this.acelerar(rmp);
         String frenar = this.frenar();
 
@@ -165,15 +191,15 @@ public class Automovil {
     }
 
     // sobrecarga de métodos
-    public float calcularConsumo( int km, float porcentajeBencina ) {
-        return km / (this.estanque.getCapacidad() * porcentajeBencina);
+    public float calcularConsumo(int km, float porcentajeBencina) {
+        return km / (this.getEstanque().getCapacidad() * porcentajeBencina);
     }
 
-    public float calcularConsumo( int km, int porcentajeBencina ) {
-        return km / (this.estanque.getCapacidad() * (porcentajeBencina / 100f));
+    public float calcularConsumo(int km, int porcentajeBencina) {
+        return km / (this.getEstanque().getCapacidad() * (porcentajeBencina / 100f));
     }
 
-    public static float calcularConsumoEstatico( int km, float porcentajeBencina ) {
+    public static float calcularConsumoEstatico(int km, float porcentajeBencina) {
         return km / (Automovil.estanqueEstatico * porcentajeBencina);
     }
 
@@ -182,9 +208,9 @@ public class Automovil {
         // Si el objeto es el mismo (this). Ejemplo: nissan.equals(nissan)
         if (this == obj) return true;
         // Si el objeto es el mismo
-        if ( !(obj instanceof Automovil)) return false;
+        if (!(obj instanceof Automovil)) return false;
         Automovil a = (Automovil) obj;
-        return  this.fabricante != null
+        return this.fabricante != null
                 && this.modelo != null
                 && this.fabricante.equals(a.fabricante)
                 && this.modelo.equals(a.modelo);
