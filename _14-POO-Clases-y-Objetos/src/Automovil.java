@@ -4,14 +4,16 @@ public class Automovil {
     private String fabricante;
     private String modelo;
     private Color color = Color.GRIS;
-    private double cilindrada;
-    private int capacidadEstanque = 40;
+    private Motor motor;
+    private Estanque estanque;
+    private Persona conductor;
+    private Rueda[] ruedas;
 
     private TipoAutomovil tipo;
 
     // Atributos estáticos
     private static Color colorPlaca = Color.NARANJO;
-    private static int capacidadEstanqueEstatico = 30;
+    private static int estanqueEstatico = 30;
     private static int ultimoId;
 
     // Atributos constantes (final)
@@ -42,14 +44,20 @@ public class Automovil {
         this.color = color;
     }
 
-    public Automovil(String fabricante, String modelo, Color color, double cilindrada) {
+    public Automovil(String fabricante, String modelo, Color color, Motor motor) {
         this(fabricante, modelo, color); // Llamada al constructor con tres argumentos (this)
-        this.cilindrada = cilindrada;
+        this.motor = motor;
     }
 
-    public Automovil(String fabricante, String modelo, Color color, double cilindrada, int capacidadEstanque) {
-        this(fabricante, modelo, color, cilindrada); // Llamada al constructor con cuatro argumentos (this)
-        this.capacidadEstanque = capacidadEstanque;
+    public Automovil(String fabricante, String modelo, Color color, Motor motor, Estanque estanque) {
+        this(fabricante, modelo, color, motor); // Llamada al constructor con cuatro argumentos (this)
+        this.estanque = estanque;
+    }
+
+    public Automovil(String fabricante, String modelo, Color color, Motor motor, Estanque estanque, Persona conductor, Rueda[] ruedas) {
+        this(fabricante, modelo, color, motor, estanque); // Llamada al constructor con cinco argumentos (this)
+        this.conductor = conductor;
+        this.ruedas = ruedas;
     }
 
     // Métodos de acceso (getters y setters)
@@ -71,18 +79,6 @@ public class Automovil {
     public void setColor(Color color) {
         this.color = color;
     }
-    public double getCilindrada() {
-        return cilindrada;
-    }
-    public void setCilindrada(double cilindrada) {
-        this.cilindrada = cilindrada;
-    }
-    public int getCapacidadEstanque() {
-        return capacidadEstanque;
-    }
-    public void setCapacidadEstanque(int capacidadEstanque) {
-        this.capacidadEstanque = capacidadEstanque;
-    }
     public static Color getColorPlaca() {
         return colorPlaca;
     }
@@ -90,10 +86,10 @@ public class Automovil {
         Automovil.colorPlaca = colorPlaca;
     }
     public static int getCapacidadEstanqueEstatico() {
-        return capacidadEstanqueEstatico;
+        return estanqueEstatico;
     }
-    public static void setCapacidadEstanqueEstatico(int capacidadEstanqueEstatico) {
-        Automovil.capacidadEstanqueEstatico = capacidadEstanqueEstatico;
+    public static void setCapacidadEstanqueEstatico(int estanqueEstatico) {
+        Automovil.estanqueEstatico = estanqueEstatico;
     }
     public int getId() {
         return id;
@@ -108,6 +104,38 @@ public class Automovil {
         this.tipo = tipo;
     }
 
+    public Motor getMotor() {
+        return motor;
+    }
+
+    public void setMotor(Motor motor) {
+        this.motor = motor;
+    }
+
+    public Estanque getEstanque() {
+        return estanque;
+    }
+
+    public void setEstanque(Estanque estanque) {
+        this.estanque = estanque;
+    }
+
+    public Persona getConductor() {
+        return conductor;
+    }
+
+    public void setConductor(Persona conductor) {
+        this.conductor = conductor;
+    }
+
+    public Rueda[] getRuedas() {
+        return ruedas;
+    }
+
+    public void setRuedas(Rueda[] ruedas) {
+        this.ruedas = ruedas;
+    }
+
     // Métodos sin argumentos
     public String verDetalle() {
         return  "\nauto.id = " + this.id +
@@ -116,8 +144,8 @@ public class Automovil {
                 "\nauto.tipo = " + this.tipo.getDescripcion() +
                 "\nauto.color = " + this.color.getColor() +
                 "\nauto.colorPlaca = " + Automovil.colorPlaca.getColor() + // Atributo estático
-                "\nauto.cilindrada = " + this.cilindrada +
-                "\nauto.capacidadEstanque = " + this.capacidadEstanque;
+                "\nauto.cilindrada = " + this.motor.getCilindrada() +
+                "\nauto.estanque = " + this.estanque.getCapacidad();
     }
 
     public  String acelerar( int rmp ) {
@@ -138,15 +166,15 @@ public class Automovil {
 
     // sobrecarga de métodos
     public float calcularConsumo( int km, float porcentajeBencina ) {
-        return km / (this.capacidadEstanque * porcentajeBencina);
+        return km / (this.estanque.getCapacidad() * porcentajeBencina);
     }
 
     public float calcularConsumo( int km, int porcentajeBencina ) {
-        return km / (this.capacidadEstanque * (porcentajeBencina / 100f));
+        return km / (this.estanque.getCapacidad() * (porcentajeBencina / 100f));
     }
 
     public static float calcularConsumoEstatico( int km, float porcentajeBencina ) {
-        return km / (Automovil.capacidadEstanqueEstatico * porcentajeBencina);
+        return km / (Automovil.estanqueEstatico * porcentajeBencina);
     }
 
     @Override // Override indica que el método se sobreescribe
@@ -169,7 +197,7 @@ public class Automovil {
                 "\nfabricante='" + fabricante +
                 "\nmodelo='" + modelo +
                 "\ncolor='" + color +
-                "\ncilindrada=" + cilindrada +
-                "\ncapacidadEstanque=" + capacidadEstanque;
+                "\nmotor=" + motor +
+                "\nestanque=" + estanque;
     }
 }

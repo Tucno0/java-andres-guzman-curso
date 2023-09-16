@@ -3,30 +3,36 @@ import java.util.Date;
 
 public class _01_EjemploAutomovil {
     public static void main(String[] args) {
+
         // Crear un objeto de la clase Automovil
         Automovil subaru = new Automovil("Subaru", "Impreza");
+        Motor motorSubaru = new Motor(2.0, TipoMotor.BENCINA);
         subaru.setColor(Color.BLANCO);
-        subaru.setCilindrada(2.0);
+        subaru.setMotor(motorSubaru);
+        subaru.setEstanque(new Estanque());
+        subaru.setTipo(TipoAutomovil.HATCHBACK);
 
         System.out.println(subaru.verDetalle());
         System.out.println(subaru.acelerarFrenar(3000));
         System.out.println("Kilómetros por litro: " + subaru.calcularConsumo(300, 0.6f));
 
         // Crear un objeto de la clase Automovil
-        Automovil mazda = new Automovil("Mazda", "CX-5", Color.ROJO, 3.0);
+        Motor motorMazda = new Motor(3.5, TipoMotor.DIESEL);
+        Automovil mazda = new Automovil("Mazda", "CX-5", Color.ROJO, motorMazda);
+        mazda.setEstanque(new Estanque(45));
 
         System.out.println(mazda.verDetalle());
         System.out.println(mazda.acelerarFrenar(3000));
         System.out.println("Kilómetros por litro: " + mazda.calcularConsumo(300, 60));
 
         // Crear un nuevo vehículo nissan
-        Automovil nissan = new Automovil("Nissan", "Sentra", Color.GRIS, 1.8, 50);
+        Automovil nissan = new Automovil("Nissan", "Sentra", Color.GRIS, new Motor(4.0, TipoMotor.DIESEL), new Estanque(50));
 
         System.out.println(nissan.verDetalle());
         System.out.println("Kilómetros por litro: " + nissan.calcularConsumo(300, 60));
 
         // Crear un nuevo vehículo nissan2
-        Automovil nissan2 = new Automovil("Nissan", "Sentra", Color.GRIS, 1.8, 50);
+        Automovil nissan2 = new Automovil("Nissan", "Sentra", Color.GRIS, new Motor(3.5, TipoMotor.BENCINA), new Estanque(50));
 
         // Crear un nuevo vehículo auto
         Automovil auto = new Automovil();

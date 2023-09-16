@@ -2,22 +2,26 @@ import java.util.Date;
 
 public class _02_EjemploAutomovilStatic {
     public static void main(String[] args) {
+        Automovil.setCapacidadEstanqueEstatico(45);
+
         // Crear un objeto de la clase Automovil subaru
         Automovil subaru = new Automovil("Subaru", "Impreza");
         subaru.setColor(Color.BLANCO);
-        subaru.setCilindrada(2.0);
+        subaru.setMotor(new Motor(2.0, TipoMotor.BENCINA));
+        subaru.setEstanque(new Estanque());
         subaru.setTipo(TipoAutomovil.HATCHBACK);
 
         // Crear un objeto de la clase Automovil mazda
-        Automovil mazda = new Automovil("Mazda", "CX-5", Color.ROJO, 3.0);
+        Automovil mazda = new Automovil("Mazda", "CX-5", Color.ROJO, new Motor(3.5, TipoMotor.DIESEL));
+        mazda.setEstanque(new Estanque(45));
         mazda.setTipo(TipoAutomovil.PICKUP);
 
         // Crear un nuevo vehículo nissan
-        Automovil nissan = new Automovil("Nissan", "Sentra", Color.GRIS, 1.8, 50);
+        Automovil nissan = new Automovil("Nissan", "Sentra", Color.GRIS, new Motor(4.0, TipoMotor.DIESEL), new Estanque(50));
         nissan.setTipo(TipoAutomovil.PICKUP);
 
         // Crear un nuevo vehículo nissan2
-        Automovil nissan2 = new Automovil("Nissan", "Sentra", Color.GRIS, 1.8, 50);
+        Automovil nissan2 = new Automovil("Nissan", "Sentra", Color.GRIS, new Motor(3.5, TipoMotor.BENCINA), new Estanque(50));
         nissan2.setTipo(TipoAutomovil.PICKUP);
 
         // Crear un nuevo vehículo auto

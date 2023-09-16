@@ -5,11 +5,13 @@ public class _03_EjemploAutomovilEnum {
         // Crear un objeto de la clase Automovil subaru
         Automovil subaru = new Automovil("Subaru", "Impreza");
         subaru.setColor(Color.BLANCO);
-        subaru.setCilindrada(2.0);
+        subaru.setMotor(new Motor(2.0, TipoMotor.BENCINA));
+        subaru.setEstanque(new Estanque());
         subaru.setTipo(TipoAutomovil.HATCHBACK);
 
         // Crear un objeto de la clase Automovil mazda
-        Automovil mazda = new Automovil("Mazda", "CX-5", Color.ROJO, 3.0);
+        Automovil mazda = new Automovil("Mazda", "CX-5", Color.ROJO, new Motor(3.5, TipoMotor.DIESEL));
+        mazda.setEstanque(new Estanque(45));
         mazda.setTipo(TipoAutomovil.PICKUP);
         System.out.println("mazda.getFabricante() = " + mazda.getFabricante());
         
