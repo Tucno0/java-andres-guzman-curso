@@ -3,14 +3,26 @@ public class Automovil {
     private int id;
     private String fabricante;
     private String modelo;
-    private String color = "Gris";
+    private Color color = Color.GRIS;
     private double cilindrada;
     private int capacidadEstanque = 40;
 
     // Atributos estáticos
-    private static String colorPlaca = " Blanco";
+    private static Color colorPlaca = Color.NARANJO;
     private static int capacidadEstanqueEstatico = 30;
     private static int ultimoId;
+
+    // Atributos constantes (final)
+    public static final Integer VELOCIDAD_MAX_CARRETERA = 120;
+    public static final int VELOCIDAD_MAX_CIUDAD = 50;
+
+    public static final String COLOR_ROJO = "Rojo";
+    public static final String COLOR_AMARILLO = "Amarillo";
+    public static final String COLOR_AZUL = "Azul";
+    public static final String COLOR_VERDE = "Verde";
+    public static final String COLOR_BLANCO = "Blanco";
+    public static final String COLOR_GRIS = "Gris oscuro";
+
 
     // Constructores
     public Automovil() {
@@ -23,17 +35,17 @@ public class Automovil {
         this.modelo = modelo;
     }
 
-    public Automovil(String fabricante, String modelo, String color) {
+    public Automovil(String fabricante, String modelo, Color color) {
         this(fabricante, modelo); // Llamada al constructor con dos argumentos (this
         this.color = color;
     }
 
-    public Automovil(String fabricante, String modelo, String color, double cilindrada) {
+    public Automovil(String fabricante, String modelo, Color color, double cilindrada) {
         this(fabricante, modelo, color); // Llamada al constructor con tres argumentos (this)
         this.cilindrada = cilindrada;
     }
 
-    public Automovil(String fabricante, String modelo, String color, double cilindrada, int capacidadEstanque) {
+    public Automovil(String fabricante, String modelo, Color color, double cilindrada, int capacidadEstanque) {
         this(fabricante, modelo, color, cilindrada); // Llamada al constructor con cuatro argumentos (this)
         this.capacidadEstanque = capacidadEstanque;
     }
@@ -51,10 +63,10 @@ public class Automovil {
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color = color;
     }
     public double getCilindrada() {
@@ -69,10 +81,10 @@ public class Automovil {
     public void setCapacidadEstanque(int capacidadEstanque) {
         this.capacidadEstanque = capacidadEstanque;
     }
-    public static String getColorPlaca() {
+    public static Color getColorPlaca() {
         return colorPlaca;
     }
-    public static void setColorPlaca(String colorPlaca) {
+    public static void setColorPlaca(Color colorPlaca) {
         Automovil.colorPlaca = colorPlaca;
     }
     public static int getCapacidadEstanqueEstatico() {
@@ -93,8 +105,8 @@ public class Automovil {
         return  "\nauto.id = " + this.id +
                 "\nfabricante = " + this.fabricante +
                 "\nmodelo = " + this.modelo +
-                "\ncolor = " + this.color +
-                "\ncolorPlaca = " + Automovil.colorPlaca + // Atributo estático
+                "\ncolor = " + this.color.getColor() +
+                "\ncolorPlaca = " + Automovil.colorPlaca.getColor() + // Atributo estático
                 "\ncilindrada = " + this.cilindrada +
                 "\ncapacidadEstanque = " + this.capacidadEstanque;
     }
