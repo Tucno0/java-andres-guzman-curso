@@ -1,11 +1,11 @@
-package com.tucno.app;
+package com.tucno.app.jardin;
 
 //import com.tucno.app.hogar.Gato;
 //import com.tucno.app.hogar.Persona;
 
 import com.tucno.app.hogar.*; // Importa todas las clases del paquete
 
-public class _01_Paquetes {
+public class EjemploPaquetes {
     public static void main(String[] args) {
 
         // Primer forma de importar una clase
@@ -13,9 +13,15 @@ public class _01_Paquetes {
 
         // Segunda forma de importar una clase
         Persona persona = new Persona();
-        persona.nombre = "Juan";
-        System.out.println(persona.nombre);
+        persona.setNombre("Juan");
+        persona.setApellido("Perez");
+        System.out.println(persona.getNombre());
 
-        Gato gato = new Gato();
+        Perro perro = new Perro();
+        perro.nombre = "Firulais";
+        perro.raza = "Bulldog";
+
+        String jugada = perro.jugar(persona);
+        System.out.println("jugada = " + jugada);
     }
 }
