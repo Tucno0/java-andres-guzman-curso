@@ -35,6 +35,6 @@ public class Main {
             s.nextLine();
         }
 
-        System.out.println(factura.generarDetalle());
+        System.out.println(factura);
     }
 }
