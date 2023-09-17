@@ -79,13 +79,13 @@ public class Factura {
                 .append(this.cliente.getRuc())
                 .append("\nDescripcion: ")
                 .append(this.descripcion)
-                .append("\n")
-                .append("\n#\tNombre\t$\tCant.\tTotal\n");
+                .append("\n");
 
         SimpleDateFormat df = new SimpleDateFormat("dd 'de' MMMM, yyyy");
         sb.append("Fecha de emisión: ")
                 .append(df.format(this.fecha))
-                .append("\n");
+                .append("\n")
+                .append("\n#\tNombre\t$\tCant.\tTotal\n");
 
         for (ItemFactura item : this.items) {
             if (item == null) {
