@@ -171,6 +171,17 @@ public class Automovil {
 
         detalle += "\nauto.estanque = " + this.getEstanque().getCapacidad();
 
+        if (this.getConductor() != null) {
+            detalle += "\nauto.conductor = " + this.getConductor();
+        }
+
+        if (this.getRuedas() != null) {
+            detalle += "\nRuedas del auto:";
+            for (Rueda rueda : this.ruedas) {
+                detalle += "\n" + rueda.getFabricante() + " aro: " + rueda.getAro() + " ancho: " + rueda.getAncho();
+            }
+        }
+
         return detalle;
     }
 
