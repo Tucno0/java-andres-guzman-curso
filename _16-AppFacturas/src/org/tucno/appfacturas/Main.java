@@ -13,14 +13,13 @@ public class Main {
 
         Scanner s = new Scanner(System.in);
         System.out.print("Ingrese la descripción de la factura: ");
-        String descripcion = s.nextLine();
 
-        Factura factura = new Factura(descripcion, cliente);
+        Factura factura = new Factura( s.nextLine(), cliente );
 
         Producto producto;
         System.out.println();
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 2; i++) {
             producto = new Producto();
             System.out.print("Ingrese el nombre del producto n° " + producto.getCodigo() + ": ");
             producto.setNombre(s.nextLine());
