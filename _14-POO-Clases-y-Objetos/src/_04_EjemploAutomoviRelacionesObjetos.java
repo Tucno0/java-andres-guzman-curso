@@ -2,13 +2,6 @@ public class _04_EjemploAutomoviRelacionesObjetos {
     public static void main(String[] args) {
 
         // Crear un objeto de la clase Automovil subaru
-        Rueda[] ruedasSubaru = new Rueda[5];
-        ruedasSubaru[0] = new Rueda("Michelin", 18, 10.5);
-        ruedasSubaru[1] = new Rueda("Michelin", 18, 10.5);
-        ruedasSubaru[2] = new Rueda("Michelin", 18, 10.5);
-        ruedasSubaru[3] = new Rueda("Michelin", 18, 10.5);
-        ruedasSubaru[4] = new Rueda("Michelin", 18, 10.5);
-
         Persona juan = new Persona("Juan", "Perez");
 
         Automovil subaru = new Automovil("Subaru", "Impreza");
@@ -17,45 +10,41 @@ public class _04_EjemploAutomoviRelacionesObjetos {
         subaru.setEstanque(new Estanque());
         subaru.setTipo(TipoAutomovil.HATCHBACK);
         subaru.setConductor(juan);
-        subaru.setRuedas(ruedasSubaru);
+//        subaru.setRuedas(ruedasSubaru);
+
+        Rueda[] ruedasSubaru = new Rueda[5];
+        for (int i = 0; i < ruedasSubaru.length; i++) {
+            subaru.addRueda(new Rueda("Michelin", 17, 8.5));
+        }
 
         // Crear un objeto de la clase Automovil mazda
-        Rueda[] ruedasMazda = {
-                new Rueda("Yokohama", 16, 7.5),
-                new Rueda("Yokohama", 16, 7.5),
-                new Rueda("Yokohama", 16, 7.5),
-                new Rueda("Yokohama", 16, 7.5),
-                new Rueda("Yokohama", 16, 7.5),
-        };
-
         Persona lucy = new Persona("Lucy", "Gonzalez");
 
         Automovil mazda = new Automovil("Mazda", "CX-5", Color.ROJO, new Motor(3.5, TipoMotor.DIESEL));
         mazda.setEstanque(new Estanque());
         mazda.setTipo(TipoAutomovil.PICKUP);
         mazda.setConductor(lucy);
-        mazda.setRuedas(ruedasMazda);
+//        mazda.setRuedas(ruedasMazda);
+
+        Rueda[] ruedasMazda = new Rueda[5];
+        for (int i = 0; i < ruedasMazda.length; i++) {
+            mazda.addRueda(new Rueda("Yokohama", 16, 7.5));
+        }
 
         // Crear un nuevo vehículo nissan
-        Rueda[] ruedasNissan = {
-                new Rueda("Pirelli", 17, 8.5),
-                new Rueda("Pirelli", 17, 8.5),
-                new Rueda("Pirelli", 17, 8.5),
-                new Rueda("Pirelli", 17, 8.5),
-                new Rueda("Pirelli", 17, 8.5),
-        };
+        Rueda[] ruedasNissan = new Rueda[5];
+        for (int i = 0; i < ruedasNissan.length; i++) {
+            ruedasNissan[i] = new Rueda("Pirelli", 17, 8.5);
+        }
         Persona bea = new Persona("Beatriz", "Gonzalez");
         Automovil nissan = new Automovil("Nissan", "Sentra", Color.GRIS, new Motor(4.0, TipoMotor.DIESEL), new Estanque(50), bea, ruedasNissan);
         nissan.setTipo(TipoAutomovil.PICKUP);
 
         // Crear un nuevo vehículo nissan2
-        Rueda[] ruedasNissan2 = {
-                new Rueda("Pirelli", 17, 8.5),
-                new Rueda("Pirelli", 17, 8.5),
-                new Rueda("Pirelli", 17, 8.5),
-                new Rueda("Pirelli", 17, 8.5),
-                new Rueda("Pirelli", 17, 8.5),
-        };
+        Rueda[] ruedasNissan2 = new Rueda[5];
+        for (int i = 0; i < ruedasNissan2.length; i++) {
+            ruedasNissan2[i] = new Rueda("Pirelli", 17, 8.5);
+        }
         Persona leo = new Persona("Leonardo", "Gonzalez");
         Automovil nissan2 = new Automovil("Nissan", "Sentra", Color.GRIS, new Motor(3.5, TipoMotor.BENCINA), new Estanque(50), leo, ruedasNissan2);
         nissan2.setTipo(TipoAutomovil.PICKUP);

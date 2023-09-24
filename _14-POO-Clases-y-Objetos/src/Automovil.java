@@ -1,4 +1,4 @@
-public class Automovil {
+public class Automovil implements Comparable<Automovil>{
     // Atributos
     private int id;
     private String fabricante;
@@ -8,6 +8,7 @@ public class Automovil {
     private Estanque estanque;
     private Persona conductor;
     private Rueda[] ruedas;
+    private int indiceRuedas;
 
     private TipoAutomovil tipo;
 
@@ -31,6 +32,7 @@ public class Automovil {
     // Constructores
     public Automovil() {
         this.id = ++ultimoId;
+        this.ruedas = new Rueda[5];
     }
 
     public Automovil(String fabricante, String modelo) {
@@ -153,6 +155,10 @@ public class Automovil {
         this.ruedas = ruedas;
     }
 
+    public void addRueda(Rueda rueda) {
+        if (indiceRuedas < this.ruedas.length)  this.ruedas[indiceRuedas++] = rueda;
+    }
+
     // Métodos sin argumentos
     public String verDetalle() {
         String detalle = "\nauto.id = " + this.id +
@@ -229,12 +235,17 @@ public class Automovil {
 
     @Override
     public String toString() {
-        return "Automovil{" +
+        return "\nAutomovil{" +
                 "\nid=" + id +
                 "\nfabricante='" + fabricante +
                 "\nmodelo='" + modelo +
                 "\ncolor='" + color +
                 "\nmotor=" + motor +
                 "\nestanque=" + estanque;
+    }
+
+    @Override
+    public int compareTo(Automovil a) {
+        return this.fabricante.compareTo(a.fabricante);
     }
 }
