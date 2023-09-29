@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Java.iml" filepath="$PROJECT_DIR$/.idea/Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_02_03_VariablesYStrings/_02_03_VariablesYStrings.iml" filepath="$PROJECT_DIR$/_02_03_VariablesYStrings/_02_03_VariablesYStrings.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_04-Operadores/_04-Operadores.iml" filepath="$PROJECT_DIR$/_04-Operadores/_04-Operadores.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_05-FlujosDeControl/_05-FlujosDeControl.iml" filepath="$PROJECT_DIR$/_05-FlujosDeControl/_05-FlujosDeControl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_06-ClasesWrapper/_06-ClasesWrapper.iml" filepath="$PROJECT_DIR$/_06-ClasesWrapper/_06-ClasesWrapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_07-ValorVsReferencia/_07-ValorVsReferencia.iml" filepath="$PROJECT_DIR$/_07-ValorVsReferencia/_07-ValorVsReferencia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_08-ClasesDateYCalendar/_08-ClasesDateYCalendar.iml" filepath="$PROJECT_DIR$/_08-ClasesDateYCalendar/_08-ClasesDateYCalendar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_09-ClaseSystem/_09-ClaseSystem.iml" filepath="$PROJECT_DIR$/_09-ClaseSystem/_09-ClaseSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_10-ClaseMath/_10-ClaseMath.iml" filepath="$PROJECT_DIR$/_10-ClaseMath/_10-ClaseMath.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_11-LineaDeComando/_11-LineaDeComando.iml" filepath="$PROJECT_DIR$/_11-LineaDeComando/_11-LineaDeComando.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_12-Arreglos/_12-Arreglos.iml" filepath="$PROJECT_DIR$/_12-Arreglos/_12-Arreglos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_13-Matrices/_13-Matrices.iml" filepath="$PROJECT_DIR$/_13-Matrices/_13-Matrices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_14-POO-Clases-y-Objetos/_14-POO-Clases-y-Objetos.iml" filepath="$PROJECT_DIR$/_14-POO-Clases-y-Objetos/_14-POO-Clases-y-Objetos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_15-POO-paquetes/_15-POO-paquetes.iml" filepath="$PROJECT_DIR$/_15-POO-paquetes/_15-POO-paquetes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_16-AppFacturas/_16-AppFacturas.iml" filepath="$PROJECT_DIR$/_16-AppFacturas/_16-AppFacturas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_17-POO-SobrecargaDeMetodos/_17-POO-SobrecargaDeMetodos.iml" filepath="$PROJECT_DIR$/_17-POO-SobrecargaDeMetodos/_17-POO-SobrecargaDeMetodos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_18-POO-Herencia/_18-POO-Herencia.iml" filepath="$PROJECT_DIR$/_18-POO-Herencia/_18-POO-Herencia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/_19-POO-HerenciaYClasesAbstractas/_19-POO-HerenciaYClasesAbstractas.iml" filepath="$PROJECT_DIR$/_19-POO-HerenciaYClasesAbstractas/_19-POO-HerenciaYClasesAbstractas.iml" />
+    </modules>
+  </component>
+</project>
