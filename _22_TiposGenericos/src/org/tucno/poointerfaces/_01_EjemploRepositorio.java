@@ -2,12 +2,13 @@ package org.tucno.poointerfaces;
 
 import org.tucno.poointerfaces.modelo.Cliente;
 import org.tucno.poointerfaces.repositorio.*;
+import org.tucno.poointerfaces.repositorio.lista.ClienteListRepositorio;
 
 import java.util.List;
 
 public class _01_EjemploRepositorio {
     public static void main(String[] args) {
-        CrudRepositorio repo = new ClienteListRepositorio();
+        OrdenablePaginableCrudRepositorio<Cliente> repo = new ClienteListRepositorio();
         repo.crear( new Cliente("Andres", "Guzman"));
         repo.crear( new Cliente("Luci", "Martinez"));
         repo.crear( new Cliente("Pepe", "Fernandez"));

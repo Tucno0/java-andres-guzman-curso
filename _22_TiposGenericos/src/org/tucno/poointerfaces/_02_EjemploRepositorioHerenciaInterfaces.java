@@ -2,6 +2,7 @@ package org.tucno.poointerfaces;
 
 import org.tucno.poointerfaces.modelo.Cliente;
 import org.tucno.poointerfaces.repositorio.*;
+import org.tucno.poointerfaces.repositorio.lista.ClienteListRepositorio;
 
 import java.util.List;
 
@@ -33,12 +34,12 @@ public class _02_EjemploRepositorioHerenciaInterfaces {
         List<Cliente> clientesOrdenApellidoAsc = repo.listar("apellido", Direccion.ASC);
         clientesOrdenApellidoAsc.forEach(System.out::println);
 
-        System.out.println("\n===== Editar =====");
-        Cliente pepeActualizar = new Cliente("Pepe", "Perez");
-        pepeActualizar.setId(3);
-        repo.editar(pepeActualizar);
-        Cliente pepe = repo.porId(3);
-        System.out.println(pepe);
+//        System.out.println("\n===== Editar =====");
+//        Cliente pepeActualizar = new Cliente("Pepe", "Perez");
+//        pepeActualizar.setId(3);
+//        repo.editar(pepeActualizar);
+//        Cliente pepe = repo.porId(3);
+//        System.out.println(pepe);
 
         System.out.println("\n===== Eliminar =====");
         repo.eliminar(2);
