@@ -2,10 +2,12 @@ package org.tucno.poosobrecarga;
 
 public class Calculadora {
 
-    private Calculadora() { // Constructor privado para evitar instanciación
+    private Calculadora() { // Constructor privado para evitar instanciación porque todos los métodos son estáticos
     }
 
     // Sobrecarga de métodos
+    // Los métodos deben tener el mismo nombre pero diferente lista de parámetros
+    // Los métodos pueden tener diferente tipo de retorno
     public static int sumar(int a, int b) {
         return a + b;
     }
@@ -46,7 +48,10 @@ public class Calculadora {
         return resultado;
     }
 
-    // Var Arguments
+    // Var Arguments: varargs
+    // Los varargs deben ser el último parámetro de la lista de parámetros
+    // Los varargs son un array de los argumentos pasados
+    // Los varargs pueden ser de cualquier tipo de dato
     public static int sumar(int... argumentos) { // int[] argumentos
         int suma = 0;
         for (int i = 0; i < argumentos.length; i++) {
