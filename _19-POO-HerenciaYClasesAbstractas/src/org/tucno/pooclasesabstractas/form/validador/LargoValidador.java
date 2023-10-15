@@ -23,6 +23,7 @@ public class LargoValidador extends Validador implements MensajeFormateable {
         this.max = max;
     }
 
+    // Implementación de la interfaz MensajeFormateable
     @Override
     public String getMensajeFormateado(String campo) {
         return String.format(this.mensaje, campo, this.min, this.max);

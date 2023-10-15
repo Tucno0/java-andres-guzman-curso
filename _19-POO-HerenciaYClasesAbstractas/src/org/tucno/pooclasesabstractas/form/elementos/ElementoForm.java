@@ -7,7 +7,9 @@ import org.tucno.pooclasesabstractas.form.validador.mensaje.MensajeFormateable;
 import java.util.ArrayList;
 import java.util.List;
 
-abstract public class ElementoForm { // abstract: no se puede instanciar
+// Clase abstracta: no se puede instanciar, pero sí heredar
+// Se puede tener métodos abstractos y métodos concretos
+abstract public class ElementoForm {
     // Atributos protegidos
     protected String valor; // protected: para que las clases hijas puedan acceder a este atributo sin necesidad de getters y setters
     protected String nombre;
@@ -57,6 +59,8 @@ abstract public class ElementoForm { // abstract: no se puede instanciar
         return this.errores.isEmpty();
     }
 
-    // Métodos abstractos
+    // Métodos abstractos: no tienen implementación en la clase padre, pero sí en las clases hijas
+    // Se debe implementar en las clases hijas (obligatorio)
+    // Si una clase tiene un método abstracto, la clase debe ser abstracta
     abstract public String dibujarHtml();
 }

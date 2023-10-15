@@ -22,7 +22,9 @@ public class _02_FormClasesAnonimas {
                 .addOpcion(new Opcion("4", "TypeScript").setSelected())
                 .addOpcion(new Opcion("5", "PHP"));
 
-        // Clases anónimas
+        // Clases anónimas: no tienen nombre, se usan para sobreescribir métodos de una clase abstracta
+        // Se usan para crear objetos de una clase abstracta
+        // Solo se pueden crear una vez
         ElementoForm saludar = new ElementoForm("saludo") {
             @Override
             public String dibujarHtml() {

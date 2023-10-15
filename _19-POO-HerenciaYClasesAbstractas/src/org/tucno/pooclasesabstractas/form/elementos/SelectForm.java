@@ -26,7 +26,7 @@ public class SelectForm extends ElementoForm{
     // MÉTODOS
     public SelectForm addOpcion(Opcion opcion) {
         this.opciones.add(opcion);
-        return this;
+        return this; // Para poder encadenar métodos
     }
 
     // SOBRE-ESCRITURA DE MÉTODOS DE LA CLASE PADRE

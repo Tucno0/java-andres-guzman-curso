@@ -1,5 +1,7 @@
 package org.tucno.pooclasesabstractas.form.elementos;
 
+// Si la clase hija no es abstracta, debe implementar todos los métodos abstractos de la clase padre
+// Si la clase hija es abstracta, no es necesario implementar los métodos abstractos de la clase padre
 public class InputForm extends ElementoForm{
     // ATRIBUTOS
     private String tipo = "text";
@@ -15,7 +17,7 @@ public class InputForm extends ElementoForm{
         this.tipo = tipo;
     }
 
-// GETTERS Y SETTERS
+    // GETTERS Y SETTERS
 
     public String getTipo() {
         return tipo;
