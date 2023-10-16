@@ -36,6 +36,9 @@ public class _01_EjemploImprenta {
         Imprimible.imprimir(informe);
         Imprimible.imprimir(libro);
 
+        System.out.println(Imprimible.TEXTO_DEFECTO);
+
+        // Clase anonima que implementa la interfaz Imprimible
         Imprimible documento = new Imprimible() {
             @Override
             public String imprimir() {

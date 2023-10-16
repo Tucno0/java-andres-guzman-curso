@@ -1,2 +1,4 @@
-package org.tucno.poointerfaces.catalogo;public class Tarea25 {
+package org.tucno.poointerfaces.catalogo;
+
+public class Tarea25 {
 }

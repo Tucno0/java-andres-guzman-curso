@@ -15,6 +15,7 @@ public class Curriculo extends Hoja implements Imprimible{
         this.experiencias = new ArrayList<>();
     }
 
+    // Retornamos el mismo objeto para poder encadenar llamadas
     public Curriculo addExperiencia(String experiencia){
         this.experiencias.add(experiencia);
         return this;
