@@ -21,6 +21,5 @@ public class _04_InterfaceFunctional {
         System.out.println("Resta: " + calculadora.computarConBiFunction(10, 5, (a, b) -> a - b));
         System.out.println("Multiplicación: " + calculadora.computarConBiFunction(10, 5, (a, b) -> a * b));
         System.out.println("División: " + calculadora.computarConBiFunction(10, 5, (a, b) -> a / b));
-
     }
 }

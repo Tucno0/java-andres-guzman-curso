@@ -1,6 +1,7 @@
 package org.tucno.apistream.ejemplos;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -17,7 +18,7 @@ public class _01_Stream {
 
         // 2. A partir de un array de elementos
         String[] arr = {"Paco", "Pepe", "Juan", "Luis", "Antonio", "Manuel"};
-        Stream<String> nombres2 = Stream.of(arr);
+        Stream<String> nombres2 = Arrays.stream(arr);
 //        nombres2.forEach(System.out::println);
 
         // 3. Utilizando el Stream.builder
@@ -40,5 +41,6 @@ public class _01_Stream {
 //        nombres4.forEach(System.out::println);
 
         lista.stream().forEach(System.out::println); // Otra forma de hacerlo en una sola línea
+        System.out.println(lista);
     }
 }
