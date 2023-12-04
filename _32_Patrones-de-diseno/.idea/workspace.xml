@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="39275f49-9659-41df-b0ba-916b188cd535" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/_32_Patrones-de-diseno.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/abstractfactory/PizzaProducto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/abstractfactory/PizzeriaCaliforniaFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/abstractfactory/PizzeriaNewYorkFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/abstractfactory/PizzeriaZonaAbstractFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/abstractfactory/ejemplo/_02_EjemploFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/abstractfactory/producto/PizzaCaliforniaPepperoni.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/abstractfactory/producto/PizzaCaliforniaQueso.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/abstractfactory/producto/PizzaCaliforniaVegetariana.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/abstractfactory/producto/PizzaNewYorkItaliana.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/abstractfactory/producto/PizzaNewYorkPepperoni.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/abstractfactory/producto/PizzaNewYorkVegetariana.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/composite/Archivo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/composite/Componente.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/composite/Directorio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/composite/ejemplo/_05_EjemploComposite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/composite/ejemplo/_06_EjemploCompositeBuscar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/decorator/Formateable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/decorator/Texto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/decorator/decorador/MayusculaDecorador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/decorator/decorador/ReemplazarEspacioDecorador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/decorator/decorador/ReversaDecorador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/decorator/decorador/SubrayadoDecorador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/decorator/decorador/TextoDecorador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/decorator/ejemplo/_03_EjemploDecorador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/decorator2/Cafe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/decorator2/Configurable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/decorator2/decorador/CafeDecorador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/decorator2/decorador/ConChocolateDecorador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/decorator2/decorador/ConCremaDecorador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/decorator2/decorador/ConLecheDecorador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/decorator2/ejemplo/_04_EjemploDecoradorCafe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/observer/Corporacion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/observer/Observable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/observer/Observer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/observer/UsuarioRepositorio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/observer/ejemplos/_07_EjemploObserver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/observer/ejemplos/_08_EjemploObserverUsuarios.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/singleton/ConexionBDSingleton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/tucno/patrones/singleton/_01_EjemploSingleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_31_Recursividad/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../_31_Recursividad/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2Z5D69G5AeCrgFTchIEhmn6YyAc" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "AtomSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.tucno.patrones.composite.ejemplo" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="39275f49-9659-41df-b0ba-916b188cd535" name="Changes" comment="" />
+      <created>1701702872458</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1701702872458</updated>
+      <workItem from="1701702873446" duration="11020000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
