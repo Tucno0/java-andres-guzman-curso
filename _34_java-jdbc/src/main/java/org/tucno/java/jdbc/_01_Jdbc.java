@@ -24,16 +24,16 @@ public class _01_EjemploJdbc {
         // La conexión se cerrará automáticamente al finalizar el bloque try-with-resources (al finalizar el bloque try)
 
         try (
-                Connection conn = DriverManager.getConnection(url, username, password);
+            Connection conn = DriverManager.getConnection(url, username, password);
 
-                // 2. Obtener la conexión a la base de datos
-                // System.out.println("Conexión exitosa...\n");
+            // 2. Obtener la conexión a la base de datos
+            // System.out.println("Conexión exitosa...\n");
 
-                // 3. Crear un objeto Statement
-                Statement stmt = conn.createStatement();
+            // 3. Crear un objeto Statement
+            Statement stmt = conn.createStatement();
 
-                // 4. Ejecutar la sentencia SQL y obtener el resultado con ResultSet
-                ResultSet resultado = stmt.executeQuery("SELECT * FROM productos")
+            // 4. Ejecutar la sentencia SQL y obtener el resultado con ResultSet
+            ResultSet resultado = stmt.executeQuery("SELECT * FROM productos2")
         ) {
             System.out.println("Conexión exitosa...\n");
 
@@ -41,12 +41,16 @@ public class _01_EjemploJdbc {
             while (resultado.next()) {
                 System.out.print(resultado.getInt("id") + " ");
                 System.out.print(" | ");
-                System.out.print(resultado.getString("nombre"));
+                System.out.print(resultado.getString("nombre") + "\t");
                 System.out.print(" | ");
-                System.out.print(resultado.getDouble("precio"));
+                System.out.print(resultado.getDouble("precio") + "\t");
                 System.out.print(" | ");
                 System.out.println(resultado.getDate("fecha_registro"));
             }
+
+//            resultado.close();
+//            stmt.close();
+//            conn.close();
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
