@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class _02_JdbcSingleton {
+public class _03_JdbcSingleton {
     public static void main(String[] args) {
         try (
                 Connection connection = ConeccionBaseDeDatos.getInstance();

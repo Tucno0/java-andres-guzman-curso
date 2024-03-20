@@ -4,7 +4,7 @@ import org.tucno.java.jdbc_close.models.Producto;
 import org.tucno.java.jdbc_close.repository.ProductoRepositorio;
 import org.tucno.java.jdbc_close.repository.Repositorio;
 
-public class _05_EjemploProductosDelete {
+public class _07_EjemploProductosDelete {
     public static void main(String[] args) {
         // LA CONEXIÓN A LA BASE DE DATOS SE CIERRA AUTOMÁTICAMENTE AL TERMINAR CADA BLOQUE
 

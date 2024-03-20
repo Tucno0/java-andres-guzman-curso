@@ -7,7 +7,7 @@ import org.tucno.java.jdbc.util.ConeccionBaseDeDatos;
 
 import java.sql.Connection;
 
-public class _05_EjemploProductosDelete {
+public class _06_EjemploProductosDelete {
     public static void main(String[] args) {
         try (Connection connection = ConeccionBaseDeDatos.getInstance()) {
             // Se crea un objeto repositorio para la clase Producto

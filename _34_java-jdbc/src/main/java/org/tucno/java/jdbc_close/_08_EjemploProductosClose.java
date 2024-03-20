@@ -7,7 +7,7 @@ import org.tucno.java.jdbc_close.repository.Repositorio;
 
 import java.util.Date;
 
-public class _06_EjemploProductosClose {
+public class _08_EjemploProductosClose {
     public static void main(String[] args) {
         // LA CONEXIÓN A LA BASE DE DATOS SE CIERRA AUTOMÁTICAMENTE AL TERMINAR CADA BLOQUE
 

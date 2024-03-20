@@ -55,15 +55,15 @@ public class ProductoRepositorio implements Repositorio<Producto> {
         ) {
             // Se asigna el valor del parámetro de la consulta
             stmt.setLong(1, id);
-            // Se ejecuta la consulta
-            ResultSet resultado = stmt.executeQuery();
 
-            if (resultado.next()) {
-                // Se crea un objeto Producto que fue encontrado en la base de datos
-                producto = crearProducto(resultado);
+            // Se ejecuta la consulta y se auto-cierra el objeto ResultSet
+            try (ResultSet resultado = stmt.executeQuery()) {
+                if (resultado.next()) {
+                    // Se crea un objeto Producto que fue encontrado en la base de datos
+                    producto = crearProducto(resultado);
+                }
             }
 
-            resultado.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
