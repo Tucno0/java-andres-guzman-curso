@@ -1,7 +1,5 @@
 package org.tucno.patrones.abstractfactory.producto;
 
-import org.tucno.patrones.abstractfactory.PizzaProducto;
-
 public class PizzaCaliforniaVegetariana extends PizzaProducto {
 
 public PizzaCaliforniaVegetariana() {

@@ -1,4 +1,6 @@
-package org.tucno.patrones.abstractfactory;
+package org.tucno.patrones.abstractfactory.factories;
+
+import org.tucno.patrones.abstractfactory.producto.PizzaProducto;
 
 abstract public class PizzeriaZonaAbstractFactory {
     public PizzaProducto ordenarPizza(String tipo) {

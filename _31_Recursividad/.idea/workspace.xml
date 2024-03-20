@@ -5,12 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be50b39d-96e6-4dd7-a228-5b39857957c7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/_31_Recursividad.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/jhampier/recursividad/ejemplo/_01_Recursividad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/jhampier/recursividad/ejemplo/models/Componente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_04-Operadores/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../_04-Operadores/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_04-Operadores/_04-Operadores.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../_04-Operadores/_04-Operadores.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_05-FlujosDeControl/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../_05-FlujosDeControl/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_05-FlujosDeControl/_05-FlujosDeControl.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../_05-FlujosDeControl/_05-FlujosDeControl.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_06-ClasesWrapper/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../_06-ClasesWrapper/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_06-ClasesWrapper/_06-ClasesWrapper.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../_06-ClasesWrapper/_06-ClasesWrapper.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_07-ValorVsReferencia/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../_07-ValorVsReferencia/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_07-ValorVsReferencia/_07-ValorVsReferencia.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../_07-ValorVsReferencia/_07-ValorVsReferencia.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_09-ClaseSystem/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../_09-ClaseSystem/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_09-ClaseSystem/_09-ClaseSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../_09-ClaseSystem/_09-ClaseSystem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_11-LineaDeComando/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../_11-LineaDeComando/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_11-LineaDeComando/_11-LineaDeComando.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../_11-LineaDeComando/_11-LineaDeComando.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_23_ManejoDeExcepciones/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../_23_ManejoDeExcepciones/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_23_ManejoDeExcepciones/_23-ManejoDeExcepciones.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../_23_ManejoDeExcepciones/_23-ManejoDeExcepciones.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_26_Programacion-funcional-expresiones-lambda/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../_26_Programacion-funcional-expresiones-lambda/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_26_Programacion-funcional-expresiones-lambda/_26_Programacion-funcional-expresiones-lambda.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../_26_Programacion-funcional-expresiones-lambda/_26_Programacion-funcional-expresiones-lambda.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_27_Programacion-funcional-api-stream/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../_27_Programacion-funcional-api-stream/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_27_Programacion-funcional-api-stream/_27_Programacion-funcional-api-stream.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../_27_Programacion-funcional-api-stream/_27_Programacion-funcional-api-stream.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_27_Programacion-funcional-api-stream/src/org/tucno/apistream/ejemplos/_02_OperadorMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/../_27_Programacion-funcional-api-stream/src/org/tucno/apistream/ejemplos/_02_OperadorMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_28_Programacion-funcional-optional/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../_28_Programacion-funcional-optional/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_28_Programacion-funcional-optional/src/org/tucno/optional/ejemplo/_01_Optional.java" beforeDir="false" afterPath="$PROJECT_DIR$/../_28_Programacion-funcional-optional/src/org/tucno/optional/ejemplo/_01_Optional.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_28_Programacion-funcional-optional/src/org/tucno/optional/ejemplo/_02_Repositorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/../_28_Programacion-funcional-optional/src/org/tucno/optional/ejemplo/_02_Repositorio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_29_Java-8-date-time/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../_29_Java-8-date-time/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_29_Java-8-date-time/_29_Java-8-date-time.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../_29_Java-8-date-time/_29_Java-8-date-time.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_29_Java-8-date-time/src/org/tucno/datetime/ejemplos/_06_Duration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../_29_Java-8-date-time/src/org/tucno/datetime/ejemplos/_06_Duration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_29_Java-8-date-time/src/org/tucno/datetime/tareas/Tarea35.java" beforeDir="false" afterPath="$PROJECT_DIR$/../_29_Java-8-date-time/src/org/tucno/datetime/tareas/Tarea35.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_30_Java-annotations/_30_Java-annotations.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../_30_Java-annotations/_30_Java-annotations.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_30_Java-annotations/src/org/jhampier/anotaciones/ejemplo/Init.java" beforeDir="false" afterPath="$PROJECT_DIR$/../_30_Java-annotations/src/org/jhampier/anotaciones/ejemplo/annotations/Init.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_30_Java-annotations/src/org/jhampier/anotaciones/ejemplo/JsonAtributo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../_30_Java-annotations/src/org/jhampier/anotaciones/ejemplo/annotations/JsonAtributo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_30_Java-annotations/src/org/jhampier/anotaciones/ejemplo/models/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../_30_Java-annotations/src/org/jhampier/anotaciones/ejemplo/models/Producto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_30_Java-annotations/src/org/jhampier/anotaciones/ejemplo/procesador/JsonSerializador.java" beforeDir="false" afterPath="$PROJECT_DIR$/../_30_Java-annotations/src/org/jhampier/anotaciones/ejemplo/procesador/JsonSerializador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_32_Patrones-de-diseno/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../_32_Patrones-de-diseno/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_33_manejo-de-archivos/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../_33_manejo-de-archivos/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../_33_manejo-de-archivos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../_33_manejo-de-archivos/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,9 +56,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2Z3EyIYFFh8QIFnDDlPpoWHLt4K" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -38,20 +67,30 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application._01_Recursividad.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "AtomSettingsConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-20.0.2-azul-20.0.2-3183f394aec4-4edb7f01" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -60,7 +99,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1701642618944</updated>
-      <workItem from="1701642619836" duration="612000" />
+      <workItem from="1701642619836" duration="1238000" />
+      <workItem from="1701644560446" duration="10000" />
+      <workItem from="1710884073599" duration="2645000" />
     </task>
     <servers />
   </component>

@@ -1,4 +1,4 @@
-package org.tucno.patrones.abstractfactory;
+package org.tucno.patrones.abstractfactory.producto;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -21,6 +21,14 @@ public class _06_Duration {
         System.out.println("Duración en segundos: " + duracion.getSeconds());
         System.out.println("Duración en nanosegundos: " + duracion.toNanos());
 
+        System.out.println("Duración en días: " + duracion.toDays());
+        System.out.println("Duración en horas: " + duracion.toHoursPart());
+        System.out.println("Duración en minutos: " + duracion.toMinutesPart());
+        System.out.println("Duración en segundos: " + duracion.toSecondsPart());
+        System.out.println("Duración en nanosegundos: " + duracion.toNanosPart());
+
+        System.out.println("Sumamos 5 horas: " + duracion.plusHours(5));
+
         // Podemos sumar y restar duraciones a un instante de tiempo
         System.out.println("\nInicio + 1 hora: " + inicio.plusHours(1));
         System.out.println("Inicio + 1 hora: " + inicio.plus(duracion));

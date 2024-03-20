@@ -1,4 +1,4 @@
-package org.jhampier.anotaciones.ejemplo;
+package org.jhampier.anotaciones.ejemplo.annotations;
 
 import java.lang.annotation.*;
 

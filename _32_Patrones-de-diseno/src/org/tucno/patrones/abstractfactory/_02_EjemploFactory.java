@@ -1,9 +1,9 @@
-package org.tucno.patrones.abstractfactory.ejemplo;
+package org.tucno.patrones.abstractfactory;
 
-import org.tucno.patrones.abstractfactory.PizzaProducto;
-import org.tucno.patrones.abstractfactory.PizzeriaCaliforniaFactory;
-import org.tucno.patrones.abstractfactory.PizzeriaNewYorkFactory;
-import org.tucno.patrones.abstractfactory.PizzeriaZonaAbstractFactory;
+import org.tucno.patrones.abstractfactory.producto.PizzaProducto;
+import org.tucno.patrones.abstractfactory.factories.PizzeriaCaliforniaFactory;
+import org.tucno.patrones.abstractfactory.factories.PizzeriaNewYorkFactory;
+import org.tucno.patrones.abstractfactory.factories.PizzeriaZonaAbstractFactory;
 
 public class _02_EjemploFactory {
     public static void main(String[] args) {

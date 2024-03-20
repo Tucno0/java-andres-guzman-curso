@@ -1,5 +1,6 @@
-package org.tucno.patrones.abstractfactory;
+package org.tucno.patrones.abstractfactory.factories;
 
+import org.tucno.patrones.abstractfactory.producto.PizzaProducto;
 import org.tucno.patrones.abstractfactory.producto.PizzaNewYorkItaliana;
 import org.tucno.patrones.abstractfactory.producto.PizzaNewYorkPepperoni;
 import org.tucno.patrones.abstractfactory.producto.PizzaNewYorkVegetariana;

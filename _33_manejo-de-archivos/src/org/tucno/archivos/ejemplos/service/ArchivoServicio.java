@@ -10,29 +10,46 @@ public class ArchivoServicio {
         // File nos permite crear un archivo en la ruta que le pasamos como parámetro
         File archivo = new File(nombre);
 
-        try(BufferedWriter buffer = new BufferedWriter(new FileWriter(archivo, true))){
+        try {
             // FileWriter nos permite escribir en el archivo que le pasamos como parámetro
             // true: nos permite agregar texto al archivo sin sobreescribirlo
-//            FileWriter escritor = new FileWriter(archivo, true);
+            FileWriter escritor = new FileWriter(archivo, true);
 
             // BufferedWriter nos permite escribir en el archivo que le pasamos como parámetro
             // sin necesidad de hacerlo línea por línea (append)
             // Es mas eficiente que FileWriter
-//            BufferedWriter buffer = new BufferedWriter(escritor);
+            BufferedWriter buffer = new BufferedWriter(escritor);
             // Con append() podemos agregar texto al archivo sin sobreescribirlo
 
             buffer.append("Hola que tal amigos\n")
                     .append("Todo bien?\n")
                     .append("Nos vemos luego\n");
-//            buffer.close();
+            buffer.close();
             System.out.println("Archivo creado correctamente");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    // Método para crear un archivo en la ruta que le pasamos como parámetro con PrintWriter
+    // Forma más eficiente de crear un archivo en la ruta que le pasamos como parámetro con BufferedWriter
     public  void crearArchivo2(String nombre) {
+        // File nos permite crear un archivo en la ruta que le pasamos como parámetro
+        File archivo = new File(nombre);
+
+        // try-with-resources nos permite cerrar el archivo automáticamente al finalizar el bloque
+        try(BufferedWriter buffer = new BufferedWriter(new FileWriter(archivo, true))){
+            buffer.append("Hola que tal amigos\n")
+                    .append("Todo bien?\n")
+                    .append("Nos vemos luego\n");
+            System.out.println("Archivo creado correctamente");
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    // Método para crear un archivo en la ruta que le pasamos como parámetro con PrintWriter
+    public  void crearArchivo3(String nombre) {
         // File nos permite crear un archivo en la ruta que le pasamos como parámetro
         File archivo = new File(nombre);
 

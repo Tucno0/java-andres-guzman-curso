@@ -1,6 +1,6 @@
 package org.jhampier.anotaciones.ejemplo.models;
 
-import org.jhampier.anotaciones.ejemplo.JsonAtributo;
+import org.jhampier.anotaciones.ejemplo.annotations.JsonAtributo;
 
 import java.time.LocalDate;
 import java.util.Arrays;

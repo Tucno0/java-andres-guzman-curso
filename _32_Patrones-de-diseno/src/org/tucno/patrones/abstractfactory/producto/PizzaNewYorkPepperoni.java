@@ -1,7 +1,5 @@
 package org.tucno.patrones.abstractfactory.producto;
 
-import org.tucno.patrones.abstractfactory.PizzaProducto;
-
 public class PizzaNewYorkPepperoni extends PizzaProducto {
     public PizzaNewYorkPepperoni() {
         super(); // Llamada al constructor de la clase padre PizzaProducto para inicializar la lista de ingredientes

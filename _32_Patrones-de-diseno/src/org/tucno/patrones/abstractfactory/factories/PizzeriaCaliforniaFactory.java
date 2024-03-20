@@ -1,5 +1,6 @@
-package org.tucno.patrones.abstractfactory;
+package org.tucno.patrones.abstractfactory.factories;
 
+import org.tucno.patrones.abstractfactory.producto.PizzaProducto;
 import org.tucno.patrones.abstractfactory.producto.PizzaCaliforniaPepperoni;
 import org.tucno.patrones.abstractfactory.producto.PizzaCaliforniaQueso;
 import org.tucno.patrones.abstractfactory.producto.PizzaCaliforniaVegetariana;

@@ -31,7 +31,9 @@ public class _02_OperadorMap {
         // collect es un método final de Stream que permite convertir un Stream en una colección
         // Collectors es una clase que contiene métodos estáticos que permiten convertir un Stream en una colección
         // toList es un método estático de Collectors que permite convertir un Stream en una Lista
-        List<String> lista = nombres.collect(Collectors.toList());
+//        List<String> lista = nombres.collect(Collectors.toList()); // Forma antigua
+        List<String> lista = nombres.toList();
+
 
         System.out.println("\nLista de nombres:");
         lista.forEach(System.out::println);

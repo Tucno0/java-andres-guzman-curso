@@ -12,6 +12,9 @@ public class _02_Repositorio {
 
         Optional<Computador> pc = repositorio.filtrar("asus ");
 
-       pc.ifPresentOrElse(System.out::println, () -> System.out.println("No se encontró el computador."));
+        pc.ifPresentOrElse(
+            System.out::println,
+            () -> System.out.println("No se encontró el computador.")
+        );
     }
 }

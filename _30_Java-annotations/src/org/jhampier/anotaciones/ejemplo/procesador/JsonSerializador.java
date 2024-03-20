@@ -1,7 +1,7 @@
 package org.jhampier.anotaciones.ejemplo.procesador;
 
-import org.jhampier.anotaciones.ejemplo.Init;
-import org.jhampier.anotaciones.ejemplo.JsonAtributo;
+import org.jhampier.anotaciones.ejemplo.annotations.Init;
+import org.jhampier.anotaciones.ejemplo.annotations.JsonAtributo;
 import org.jhampier.anotaciones.ejemplo.procesador.exception.JsonSerializadorException;
 
 import java.lang.reflect.Field;

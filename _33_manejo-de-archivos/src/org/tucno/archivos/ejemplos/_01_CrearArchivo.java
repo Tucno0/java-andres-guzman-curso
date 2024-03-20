@@ -7,6 +7,6 @@ public class _01_CrearArchivo {
         String nombreArchivo = "D:\\Cursos\\Andres Guzman\\Java\\_33_manejo-de-archivos\\src\\org\\tucno\\archivos\\ejemplos\\files\\archivo.txt";
 
         ArchivoServicio service = new ArchivoServicio();
-        service.crearArchivo2(nombreArchivo);
+        service.crearArchivo3(nombreArchivo);
     }
 }

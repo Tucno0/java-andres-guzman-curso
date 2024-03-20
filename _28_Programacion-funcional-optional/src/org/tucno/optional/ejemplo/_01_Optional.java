@@ -32,6 +32,7 @@ public class _01_Optional {
         // isEmpty() -> Devuelve true si el valor es nulo.
         System.out.println("optional.isEmpty() = " + optional.isEmpty());
 
+
         // Cuando nombre es nulo.
         nombre = null;
 //        optional.of(nombre); // Lanza una excepción NullPointerException.
@@ -39,9 +40,11 @@ public class _01_Optional {
         System.out.println("\noptional = " + optional);
         System.out.println("optional.isPresent() = " + optional.isPresent());
 
-        optional.ifPresentOrElse(valor -> System.out.println("Hola " + valor + ", usando ifPresentOrElse() con una expresión lambda."),
-                () -> System.out.println("El valor no está presente, usando ifPresentOrElse() con una expresión lambda.")
+        optional.ifPresentOrElse(
+            valor -> System.out.println("Hola " + valor + ", usando ifPresentOrElse() con una expresión lambda."),
+            () -> System.out.println("El valor no está presente, usando ifPresentOrElse() con una expresión lambda.")
         );
+
 
         // Optional vacío.
         Optional<String> optionalEmpty = Optional.empty();
