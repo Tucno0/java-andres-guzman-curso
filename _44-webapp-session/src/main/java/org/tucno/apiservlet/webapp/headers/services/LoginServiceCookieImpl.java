@@ -6,7 +6,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import java.util.Arrays;
 import java.util.Optional;
 
-public class LoginServiceImpl implements LoginService {
+public class LoginServiceCookieImpl implements LoginService {
     @Override
     public Optional<String> getUserName(HttpServletRequest req) {
         // Se obtiene la lista de cookies de la petición actual

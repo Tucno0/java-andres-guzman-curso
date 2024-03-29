@@ -2,19 +2,14 @@ package org.tucno.apiservlet.webapp.headers.controllers;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.tucno.apiservlet.webapp.headers.models.Producto;
-import org.tucno.apiservlet.webapp.headers.services.LoginService;
-import org.tucno.apiservlet.webapp.headers.services.LoginServiceImpl;
-import org.tucno.apiservlet.webapp.headers.services.ProductoService;
-import org.tucno.apiservlet.webapp.headers.services.ProductoServiceImpl;
+import org.tucno.apiservlet.webapp.headers.services.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,8 +23,8 @@ public class ProductoServlet extends HttpServlet {
         List<Producto> productos = productoService.listar();
 
         // Se obtiene la lista de cookies de la petición actual
-        LoginService loginService = new LoginServiceImpl();
-        Optional<String> usernameCookie = loginService.getUserName(req);
+        LoginService loginService = new LoginServiceSessionImpl();
+        Optional<String> usernameSession = loginService.getUserName(req);
 
         // Se establece el tipo de contenido de la respuesta, en este caso es un texto HTML
         resp.setContentType("text/html;charset=UTF-8");
@@ -41,7 +36,7 @@ public class ProductoServlet extends HttpServlet {
                             <td>\{producto.getId()}</td>
                             <td>\{producto.getNombre()}</td>
                             <td>\{producto.getTipo()}</td>
-                            \{usernameCookie.isPresent() ? STR."<td>\{producto.getPrecio()}</td>" : ""}
+                            \{usernameSession.isPresent() ? STR."<td>\{producto.getPrecio()}</td>" : ""}
                         </tr>
             """);
         });
@@ -101,7 +96,7 @@ public class ProductoServlet extends HttpServlet {
                 <body>
                     <h1>Listado de Productos</h1>
 
-                    \{usernameCookie.map(s -> STR."<button>Hola \{s}</button>").orElse("")}
+                    \{usernameSession.map(s -> STR."<button>Hola \{s}</button>").orElse("")}
 
                     <table border="1">
                         <thead>
@@ -109,7 +104,7 @@ public class ProductoServlet extends HttpServlet {
                                 <th>ID</th>
                                 <th>Nombre</th>
                                 <th>Tipo</th>
-                                \{usernameCookie.isPresent() ? "<th>Precio</th>" : ""}
+                                \{usernameSession.isPresent() ? "<th>Precio</th>" : ""}
                             </tr>
                         </thead>
                         <tbody>

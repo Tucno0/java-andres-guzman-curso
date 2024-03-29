@@ -58,7 +58,7 @@
 <body>
 <div class="login-container">
     <h2>Login</h2>
-    <form action="/webapp-cookie/login" method="post">
+    <form action="/webapp-session/login" method="post">
         <div class="input-group">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" required>

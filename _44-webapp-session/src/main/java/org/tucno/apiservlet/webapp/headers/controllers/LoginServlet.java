@@ -2,16 +2,13 @@ package org.tucno.apiservlet.webapp.headers.controllers;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.Cookie;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.*;
 import org.tucno.apiservlet.webapp.headers.services.LoginService;
-import org.tucno.apiservlet.webapp.headers.services.LoginServiceImpl;
+import org.tucno.apiservlet.webapp.headers.services.LoginServiceCookieImpl;
+import org.tucno.apiservlet.webapp.headers.services.LoginServiceSessionImpl;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Arrays;
 import java.util.Optional;
 
 @WebServlet({"/login", "/login.html"}) // http://localhost:8080/webapp-headers/login
@@ -22,10 +19,10 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // Se obtiene la lista de cookies de la petición actual
-        LoginService loginService = new LoginServiceImpl();
-        Optional<String> usernameCookie = loginService.getUserName(req);
+        LoginService loginService = new LoginServiceSessionImpl();
+        Optional<String> usernameOptional = loginService.getUserName(req);
 
-        if (usernameCookie.isPresent()) {
+        if (usernameOptional.isPresent()) {
             // Se establece el tipo de contenido de la respuesta, en este caso es un texto HTML
             resp.setContentType("text/html;charset=UTF-8");
 
@@ -38,7 +35,7 @@ public class LoginServlet extends HttpServlet {
                     <head>
                       <meta charset="UTF-8">
                       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                      <title>Hola!!!! \{usernameCookie.get()}</title>
+                      <title>Hola!!!! \{usernameOptional.get()}</title>
 
                       <style>
                         .login-success-container {
@@ -66,7 +63,7 @@ public class LoginServlet extends HttpServlet {
                     <body>
                         <div class="login-success-container">
                             <h1 class="title">Login Correcto</h1>
-                            <p class="welcome-message">¡Bienvenido \{usernameCookie.get()}! ya has iniciado sesion anteriormente</p>
+                            <p class="welcome-message">¡Bienvenido \{usernameOptional.get()}! ya has iniciado sesion anteriormente</p>
                             <a href="\{req.getContextPath()}/index.html">Volver</a>
                             <a href="\{req.getContextPath()}/logout">Cerrar sesión</a>
                         </div>
@@ -87,10 +84,11 @@ public class LoginServlet extends HttpServlet {
         String password = req.getParameter("password");
 
         if (username.equals(USERNAME) && password.equals(PASSWORD)) {
-            // Se crea una cookie con el nombre de usuario
-            Cookie usernameCookie = new Cookie("username", username);
-            // Agregamos la cookie a la respuesta
-            resp.addCookie(usernameCookie);
+            // HttpSession es una interfaz que proporciona una forma de identificar a un usuario en la aplicación web
+            // getSession() permite obtener la sesión actual o crear una nueva si no existe
+            HttpSession session = req.getSession();
+            // con setAttribute() se pueden guardar atributos en la sesión actual
+            session.setAttribute("username", username);
 
             // Se redirige a la página de login
             resp.sendRedirect(STR."\{req.getContextPath()}/login");
