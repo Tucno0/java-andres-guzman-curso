@@ -1,6 +1,6 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="org.tucno.apiservlet.webapp.headers.models.*" %>
+<%@ page import="org.tucno.apiservlet.webapp.listeners.models.*" %>
 
 <%
     // Obtenemos el carro de la petición

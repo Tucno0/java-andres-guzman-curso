@@ -1,4 +1,4 @@
-package org.tucno.apiservlet.webapp.headers.controllers;
+package org.tucno.apiservlet.webapp.listeners.controllers;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -6,11 +6,11 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import org.tucno.apiservlet.webapp.headers.models.Carro;
-import org.tucno.apiservlet.webapp.headers.models.ItemCarro;
-import org.tucno.apiservlet.webapp.headers.models.Producto;
-import org.tucno.apiservlet.webapp.headers.services.ProductoService;
-import org.tucno.apiservlet.webapp.headers.services.ProductoServiceImpl;
+import org.tucno.apiservlet.webapp.listeners.models.Carro;
+import org.tucno.apiservlet.webapp.listeners.models.ItemCarro;
+import org.tucno.apiservlet.webapp.listeners.models.Producto;
+import org.tucno.apiservlet.webapp.listeners.services.ProductoService;
+import org.tucno.apiservlet.webapp.listeners.services.ProductoServiceImpl;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -33,16 +33,7 @@ public class AgregarCarroServlet extends HttpServlet {
             ItemCarro item = new ItemCarro(1, producto.get());
             // Obtenemos la sesion del request
             HttpSession session = req.getSession();
-            Carro carro;
-
-            // Si no existe el carro en la sesion, lo creamos
-            if (session.getAttribute("carro") == null) {
-                carro = new Carro();
-                session.setAttribute("carro", carro);
-            } else {
-                // Si ya existe, lo obtenemos
-                carro = (Carro) session.getAttribute("carro");
-            }
+            Carro carro = (Carro) session.getAttribute("carro");
 
             // Agregamos el item al carro
             carro.addItem(item);
