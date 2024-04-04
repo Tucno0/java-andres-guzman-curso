@@ -4,6 +4,7 @@ import org.tucno.apiservlet.webapp.headers.models.Producto;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 public class ProductoServiceImpl implements ProductoService {
     @Override
@@ -30,5 +31,17 @@ public class ProductoServiceImpl implements ProductoService {
                 new Producto(19L, "Mesa de Centro", "Muebles", 80.0),
                 new Producto(20L, "Comedor", "Muebles", 300.0)
         );
+    }
+
+    @Override
+    public Optional<Producto> buscarProducto(String nombre) {
+        return this.listar().stream()
+                .filter(producto -> {
+                    if (nombre == null || nombre.isBlank()) {
+                        return false;
+                    }
+                    return producto.getNombre().contains(nombre);
+                })
+                .findFirst();
     }
 }

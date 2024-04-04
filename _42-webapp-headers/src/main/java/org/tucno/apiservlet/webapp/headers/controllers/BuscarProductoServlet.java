@@ -23,14 +23,7 @@ public class BuscarProductoServlet extends HttpServlet {
         String nombreProducto = req.getParameter("nombre");
 
         // Se busca el producto por el nombre
-        Optional<Producto> encontrado = productoService.listar().stream()
-                .filter(producto -> {
-                    if (nombreProducto == null || nombreProducto.isBlank()) {
-                        return false;
-                    }
-                    return producto.getNombre().contains(nombreProducto);
-                })
-                .findFirst();
+        Optional<Producto> encontrado = productoService.buscarProducto(nombreProducto);
 
         if (encontrado.isPresent()) {
             // Se establece el tipo de contenido de la respuesta, en este caso es un texto HTML
