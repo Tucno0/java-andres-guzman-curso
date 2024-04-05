@@ -14,6 +14,7 @@ import java.util.Optional;
 // WebFilter: Anotación que indica que la clase es un filtro
 // filterName: Nombre del filtro
 // urlPatterns: Patrones de URL que se van a filtrar (en este caso, las peticiones a /ver-carro y /agregar-carro)
+// Se pueden agregar patrones de URL separados por comas, por ejemplo: urlPatterns = {"/carro/*", "/usuario/*"}
 @WebFilter(filterName = "LoginFilter", urlPatterns = {"/ver-carro","/agregar-carro"})
 public class LoginFilter implements Filter {
     @Override
