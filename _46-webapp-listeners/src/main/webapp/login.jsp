@@ -58,7 +58,7 @@
 <body>
 <div class="login-container">
     <h2>Login</h2>
-    <form action="/webapp-shopping-cart/login" method="post">
+    <form action="/webapp-listeners/login" method="post">
         <div class="input-group">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" required>

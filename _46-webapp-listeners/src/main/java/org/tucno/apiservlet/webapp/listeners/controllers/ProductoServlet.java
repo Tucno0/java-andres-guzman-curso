@@ -26,7 +26,11 @@ public class ProductoServlet extends HttpServlet {
         LoginService loginService = new LoginServiceSessionImpl();
         Optional<String> usernameSession = loginService.getUserName(req);
 
+        // Se obtiene el mensaje del request y de la aplicación
+        // Estos mensajes fueron guardados en los listeners de la aplicación y del request
+        // se crea en cada request y se destruye al finalizar
         String mensajeRequest = (String) req.getAttribute("mensaje");
+        // se crea una sola vez en el AplicacionListener
         String mensajeApp = (String) req.getServletContext().getAttribute("mensaje");
 
         // Se establece el tipo de contenido de la respuesta, en este caso es un texto HTML

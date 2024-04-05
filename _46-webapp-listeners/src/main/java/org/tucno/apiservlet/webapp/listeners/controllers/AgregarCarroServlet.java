@@ -33,6 +33,8 @@ public class AgregarCarroServlet extends HttpServlet {
             ItemCarro item = new ItemCarro(1, producto.get());
             // Obtenemos la sesion del request
             HttpSession session = req.getSession();
+
+            // Obtenemos el carro de la sesion, previamente creado en el AplicacionListener al crear la sesion
             Carro carro = (Carro) session.getAttribute("carro");
 
             // Agregamos el item al carro
