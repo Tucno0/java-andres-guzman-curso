@@ -1,0 +1,71 @@
+/* Estilo futurista */
+body {
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    font-family: 'Roboto', sans-serif;
+    color: #d3d3d3;
+}
+
+.header {
+    background-color: #0d1117;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.header__title {
+    color: #58a6ff;
+    text-shadow: 0 0 10px #58a6ff;
+    font-size: 2.5em;
+}
+
+.main {
+    padding: 20px;
+}
+
+.main__text {
+    line-height: 1.6;
+}
+
+.main__list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.main__item {
+    padding: 10px 0;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.main__item:last-child {
+    border-bottom: none;
+}
+
+.footer {
+    background-color: #0d1117;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer__title {
+    color: #58a6ff;
+    text-shadow: 0 0 10px #58a6ff;
+    font-size: 2em;
+}
+
+.footer__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer__button {
+    background-color: #58a6ff;
+    color: #0d1117;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.footer__button:hover {
+    background-color: #1f6feb;
+}
