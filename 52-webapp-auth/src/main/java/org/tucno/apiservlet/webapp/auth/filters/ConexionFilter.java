@@ -5,7 +5,9 @@ import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletResponse;
 import org.tucno.apiservlet.webapp.auth.exceptions.ServiceJdbcException;
 import org.tucno.apiservlet.webapp.auth.utils.ConexionBaseDatos;
+import org.tucno.apiservlet.webapp.auth.utils.ConexionBaseDatosDS;
 
+import javax.naming.NamingException;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -23,7 +25,10 @@ public class ConexionFilter implements Filter {
     // Con doFilter se ejecuta el siguiente filtro
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        try (Connection connection = ConexionBaseDatos.getConnection()) {
+        try (
+//            Connection connection = ConexionBaseDatos.getConnection(); // Conexión a la base de datos sin DataSource
+            Connection connection = ConexionBaseDatosDS.getConnection(); // Conexión a la base de datos con DataSource (JNDI) y pool de conexiones
+        ) {
             // Si el autocommit está activado, lo desactivamos
             if (connection.getAutoCommit()) {
                 connection.setAutoCommit(false);
@@ -42,7 +47,7 @@ public class ConexionFilter implements Filter {
                 e.printStackTrace();
             }
 
-        } catch (Exception e) {
+        } catch (SQLException | NamingException e) {
             e.printStackTrace();
         }
     }
