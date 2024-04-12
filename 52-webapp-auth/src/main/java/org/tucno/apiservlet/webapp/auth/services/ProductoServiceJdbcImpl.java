@@ -8,7 +8,7 @@ import org.tucno.apiservlet.webapp.auth.repositories.ProductoRepositoryJdbcImpl;
 import org.tucno.apiservlet.webapp.auth.repositories.Repository;
 
 import java.sql.Connection;
-import java.sql.SQLDataException;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,7 +25,7 @@ public class ProductoServiceJdbcImpl implements ProductoService{
     public List<Producto> listar() {
         try {
             return productoRepositoryJdbc.listar();
-        } catch (SQLDataException e) {
+        } catch (SQLException e) {
             throw new ServiceJdbcException(e.getMessage(), e);
         }
     }
@@ -35,7 +35,7 @@ public class ProductoServiceJdbcImpl implements ProductoService{
         try {
             // si el producto no existe, el método porId retorna un Optional empty
             return Optional.ofNullable((Producto) productoRepositoryJdbc.porId(id));
-        } catch (SQLDataException e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
 
         }
@@ -45,7 +45,7 @@ public class ProductoServiceJdbcImpl implements ProductoService{
     public void guardar(Producto producto) {
         try {
             productoRepositoryJdbc.guardar(producto);
-        } catch (SQLDataException e) {
+        } catch (SQLException e) {
             throw new ServiceJdbcException(e.getMessage(), e.getCause());
         }
     }
@@ -54,7 +54,7 @@ public class ProductoServiceJdbcImpl implements ProductoService{
     public void eliminar(Long id) {
         try {
             productoRepositoryJdbc.eliminar(id);
-        } catch (SQLDataException e) {
+        } catch (SQLException e) {
             throw new ServiceJdbcException(e.getMessage(), e.getCause());
         }
     }
@@ -63,7 +63,7 @@ public class ProductoServiceJdbcImpl implements ProductoService{
     public List<Categoria> listarCategorias() {
         try {
             return categoriaRepositoryJdbc.listar();
-        } catch (SQLDataException e) {
+        } catch (SQLException e) {
             throw new ServiceJdbcException(e.getMessage(), e);
         }
     }
@@ -72,7 +72,7 @@ public class ProductoServiceJdbcImpl implements ProductoService{
     public Optional<Categoria> obtenerCategoriaPorId(Long id) {
         try {
             return Optional.ofNullable((Categoria) categoriaRepositoryJdbc.porId(id));
-        } catch (SQLDataException e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
@@ -81,7 +81,7 @@ public class ProductoServiceJdbcImpl implements ProductoService{
     public void guardarCategoria(Categoria categoria) {
         try {
             categoriaRepositoryJdbc.guardar(categoria);
-        } catch (SQLDataException e) {
+        } catch (SQLException e) {
             throw new ServiceJdbcException(e.getMessage(), e.getCause());
         }
     }
@@ -90,7 +90,7 @@ public class ProductoServiceJdbcImpl implements ProductoService{
     public void eliminarCategoria(Long id) {
         try {
             categoriaRepositoryJdbc.eliminar(id);
-        } catch (SQLDataException e) {
+        } catch (SQLException e) {
             throw new ServiceJdbcException(e.getMessage(), e.getCause());
         }
     }
