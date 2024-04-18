@@ -1,20 +1,37 @@
 package org.tucno.apiservlet.webapp.auth.repositories;
 
-import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import jakarta.inject.Inject;
-import jakarta.inject.Named;
+import org.tucno.apiservlet.webapp.auth.configs.MysqlConnection;
+import org.tucno.apiservlet.webapp.auth.configs.Repository;
 import org.tucno.apiservlet.webapp.auth.models.Categoria;
 import org.tucno.apiservlet.webapp.auth.models.Producto;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
-@ApplicationScoped
-public class ProductoRepositoryJdbcImpl implements Repository<Producto> {
+@Repository
+public class ProductoRepositoryJdbcImpl implements CrudRepository<Producto> {
     @Inject
-    @Named("connection")
+//    @Named("connection")
+    @MysqlConnection
     private Connection connection;
+
+    @Inject
+    private Logger logger;
+
+    @PostConstruct
+    public void iniciar() {
+        logger.info(STR."Iniciando el beans \{this.getClass().getSimpleName()}");
+    }
+
+    @PreDestroy
+    public void destruir() {
+        logger.info(STR."Destruyendo el beans \{this.getClass().getSimpleName()}");
+    }
 
     @Override
     public List listar() throws SQLDataException {

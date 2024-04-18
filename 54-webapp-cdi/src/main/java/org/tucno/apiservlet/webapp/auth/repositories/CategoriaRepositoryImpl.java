@@ -1,8 +1,8 @@
 package org.tucno.apiservlet.webapp.auth.repositories;
 
-import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import jakarta.inject.Named;
+import org.tucno.apiservlet.webapp.auth.configs.MysqlConnection;
+import org.tucno.apiservlet.webapp.auth.configs.Repository;
 import org.tucno.apiservlet.webapp.auth.models.Categoria;
 
 import java.sql.*;
@@ -10,13 +10,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 // AplicationScoped es una anotación que nos permite indicar que la instancia de la clase es única y es compartida
-@ApplicationScoped
-public class CategoriaRepositoryImpl implements Repository<Categoria>{
+//@ApplicationScoped
+
+
+@Repository
+public class CategoriaRepositoryImpl implements CrudRepository<Categoria> {
     private Connection connection;
 
     // Otra forma de inyectar dependencias es utilizando la anotación @Inject en el constructor
     @Inject
-    public CategoriaRepositoryImpl(@Named("connection") Connection connection) {
+    public CategoriaRepositoryImpl(@MysqlConnection Connection connection) {
         if (connection == null) {
             throw new IllegalArgumentException("Connection cannot be null");
         }

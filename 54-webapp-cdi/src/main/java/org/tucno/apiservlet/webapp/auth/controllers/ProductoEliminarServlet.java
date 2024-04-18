@@ -7,6 +7,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
+import org.tucno.apiservlet.webapp.auth.configs.ProductoServicePrincipal;
 import org.tucno.apiservlet.webapp.auth.models.Producto;
 import org.tucno.apiservlet.webapp.auth.services.ProductoService;
 import org.tucno.apiservlet.webapp.auth.services.ProductoServiceJdbcImpl;
@@ -18,7 +20,7 @@ import java.util.Optional;
 @WebServlet("/productos/eliminar")
 public class ProductoEliminarServlet extends HttpServlet {
     @Inject
-    @Named("default")
+    @ProductoServicePrincipal
     private ProductoService productoService;
 
     @Override

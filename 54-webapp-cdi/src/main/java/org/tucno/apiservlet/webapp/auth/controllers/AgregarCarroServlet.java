@@ -7,6 +7,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.tucno.apiservlet.webapp.auth.configs.ProductoServicePrincipal;
 import org.tucno.apiservlet.webapp.auth.models.Carro;
 import org.tucno.apiservlet.webapp.auth.models.ItemCarro;
 import org.tucno.apiservlet.webapp.auth.models.Producto;
@@ -25,7 +26,7 @@ public class AgregarCarroServlet extends HttpServlet {
     private Carro carro;
 
     @Inject
-    @Named("default")
+    @ProductoServicePrincipal
     private ProductoService productoService;
 
     @Override

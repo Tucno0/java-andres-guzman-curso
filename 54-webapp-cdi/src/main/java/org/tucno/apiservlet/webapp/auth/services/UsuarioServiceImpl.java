@@ -2,6 +2,7 @@ package org.tucno.apiservlet.webapp.auth.services;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import org.tucno.apiservlet.webapp.auth.configs.Service;
 import org.tucno.apiservlet.webapp.auth.exceptions.ServiceJdbcException;
 import org.tucno.apiservlet.webapp.auth.models.Usuario;
 import org.tucno.apiservlet.webapp.auth.repositories.UsuarioRepository;
@@ -12,7 +13,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
-@ApplicationScoped
+@Service
 public class UsuarioServiceImpl implements UsuarioService  {
     private UsuarioRepository usuarioRepository;
 

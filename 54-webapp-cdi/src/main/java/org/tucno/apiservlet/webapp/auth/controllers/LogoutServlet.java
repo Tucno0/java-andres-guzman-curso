@@ -1,5 +1,6 @@
 package org.tucno.apiservlet.webapp.auth.controllers;
 
+import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
@@ -11,9 +12,11 @@ import java.util.Optional;
 
 @WebServlet("/logout")
 public class LogoutServlet extends HttpServlet {
+    @Inject
+    private LoginService loginService;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        LoginService loginService = new LoginServiceSessionImpl();
         Optional<String> usernameCookie = loginService.getUserName(req);
 
         // Si la cookie con el nombre de usuario existe, se elimina

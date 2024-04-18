@@ -1,18 +1,18 @@
 package org.tucno.apiservlet.webapp.auth.repositories;
 
-import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import jakarta.inject.Named;
+import org.tucno.apiservlet.webapp.auth.configs.MysqlConnection;
+import org.tucno.apiservlet.webapp.auth.configs.Repository;
 import org.tucno.apiservlet.webapp.auth.models.Usuario;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@ApplicationScoped
+@Repository
 public class UsuarioRepositoryImpl implements UsuarioRepository {
     @Inject
-    @Named("connection")
+    @MysqlConnection
     private Connection connection;
 
     @Override

@@ -21,10 +21,11 @@ public class LoginServlet extends HttpServlet {
     @Inject
     private UsuarioService usuarioService;
 
+    @Inject
+    private LoginService loginService;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        // Se obtiene la lista de cookies de la petición actual
-        LoginService loginService = new LoginServiceSessionImpl();
         Optional<String> usernameOptional = loginService.getUserName(req);
 
         if (usernameOptional.isPresent()) {

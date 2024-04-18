@@ -1,5 +1,6 @@
 package org.tucno.apiservlet.webapp.auth.services;
 
+import jakarta.enterprise.inject.Alternative;
 import org.tucno.apiservlet.webapp.auth.models.Categoria;
 import org.tucno.apiservlet.webapp.auth.models.Producto;
 
@@ -7,6 +8,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+// Con esta anotación se indica a CDI que esta implementación es alternativa a la original
+//@Alternative
 public class ProductoServiceImpl implements ProductoService {
     @Override
     public List<Producto> listar() {

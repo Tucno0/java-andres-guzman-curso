@@ -1,12 +1,13 @@
 package org.tucno.apiservlet.webapp.auth.controllers;
 
 import jakarta.inject.Inject;
-import jakarta.inject.Named;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
+import org.tucno.apiservlet.webapp.auth.configs.ProductoServicePrincipal;
 import org.tucno.apiservlet.webapp.auth.models.Producto;
 import org.tucno.apiservlet.webapp.auth.services.*;
 
@@ -20,17 +21,18 @@ import java.util.Optional;
 @WebServlet({"/productos.html", "/productos"})
 public class ProductoServlet extends HttpServlet {
     @Inject
-    @Named("default")
+    @ProductoServicePrincipal
     private ProductoService productoService;
+
+    // Se obtiene la lista de cookies de la petición actual
+    @Inject
+    private LoginService loginService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         // Se obtiene la lista de productos
         List<Producto> productos = productoService.listar();
-
-        // Se obtiene la lista de cookies de la petición actual
-        LoginService loginService = new LoginServiceSessionImpl();
         Optional<String> usernameSession = loginService.getUserName(req);
 
         // Al request se le añade la lista de productos y el nombre de usuario

@@ -1,0 +1,13 @@
+<beans xmlns="https://jakarta.ee/xml/ns/jakartaee"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd"
+       version="3.0"
+       bean-discovery-mode="annotated">
+<!--    All: Es para que el contenedor busque todos los beans en el classpath y los registre automáticamente.-->
+<!--    Annotated: Es para que el contenedor busque los beans anotados con @Named, @ManagedBean, @SessionScoped, @RequestScoped, etc.-->
+
+    <interceptors>
+        <class>org.tucno.apiservlet.webapp.auth.interceptors.LoginInterceptor</class>
+        <class>org.tucno.apiservlet.webapp.auth.interceptors.TransactionalInterceptor</class>
+    </interceptors>
+</beans>

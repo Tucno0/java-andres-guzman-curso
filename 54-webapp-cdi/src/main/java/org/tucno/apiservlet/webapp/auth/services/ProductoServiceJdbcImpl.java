@@ -1,25 +1,26 @@
 package org.tucno.apiservlet.webapp.auth.services;
 
-import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
-import jakarta.inject.Named;
+import org.tucno.apiservlet.webapp.auth.configs.ProductoServicePrincipal;
+import org.tucno.apiservlet.webapp.auth.configs.Service;
 import org.tucno.apiservlet.webapp.auth.exceptions.ServiceJdbcException;
 import org.tucno.apiservlet.webapp.auth.models.Categoria;
 import org.tucno.apiservlet.webapp.auth.models.Producto;
-import org.tucno.apiservlet.webapp.auth.repositories.Repository;
+import org.tucno.apiservlet.webapp.auth.repositories.CrudRepository;
 
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
-@ApplicationScoped
-@Named("default")
+@Service
+@ProductoServicePrincipal
 public class ProductoServiceJdbcImpl implements ProductoService{
     @Inject
-    private Repository<Producto> productoRepositoryJdbc;
+    private CrudRepository<Producto> productoRepositoryJdbc;
+
     @Inject
-    private Repository<Categoria> categoriaRepositoryJdbc;
+    private CrudRepository<Categoria> categoriaRepositoryJdbc;
 
     @Override
     public List<Producto> listar() {
@@ -31,6 +32,7 @@ public class ProductoServiceJdbcImpl implements ProductoService{
     }
 
     @Override
+//    @Logging // @Logging: Anotación de enlace de interceptor personalizada. Solo es para el método listar()
     public Optional<Producto> obtenerPorId(Long id) {
         try {
             // si el producto no existe, el método porId retorna un Optional empty

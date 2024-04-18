@@ -5,6 +5,7 @@ import jakarta.inject.Named;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletResponse;
+import org.tucno.apiservlet.webapp.auth.configs.MysqlConnection;
 import org.tucno.apiservlet.webapp.auth.exceptions.ServiceJdbcException;
 import org.tucno.apiservlet.webapp.auth.utils.ConexionBaseDatos;
 import org.tucno.apiservlet.webapp.auth.utils.ConexionBaseDatosDS;
@@ -18,9 +19,10 @@ import java.sql.SQLException;
 // Se va a ejecutar en todas las peticiones
 @WebFilter("/*")
 public class ConexionFilter implements Filter {
-    @Inject // Inyectamos la conexión a la base de datos con CDI
-    @Named("connection") // Le damos un nombre a la conexión
-    private Connection connection;
+    /*@Inject // Inyectamos la conexión a la base de datos con CDI
+//    @Named("connection") // Le damos un nombre a la conexión
+    @MysqlConnection // Se utiliza la anotación personalizada MysqlConnection para calificar la conexión
+    private Connection connection;*/
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -31,31 +33,32 @@ public class ConexionFilter implements Filter {
     // Con doFilter se ejecuta el siguiente filtro
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        try (
+
 //            Connection connection = ConexionBaseDatos.getConnection(); // Conexión a la base de datos sin DataSource
 //            Connection connection = ConexionBaseDatosDS.getConnection(); // Conexión a la base de datos con DataSource (JNDI) y pool de conexiones
-                Connection connection = this.connection; // Conexión a la base de datos con CDI
-        ) {
+//            Connection connection = this.connection; // Conexión a la base de datos con CDI
+        /*try {
+            Connection connection = this.connection;
             // Si el autocommit está activado, lo desactivamos
             if (connection.getAutoCommit()) {
                 connection.setAutoCommit(false);
-            }
+            }*/
 
             try {
                 // Pasamos la conexión de base de datos al siguiente filtro
                 filterChain.doFilter(servletRequest, servletResponse);
-                connection.commit();
-            } catch (SQLException | ServiceJdbcException e) {
+//                connection.commit();
+            } catch (ServiceJdbcException e) {
                 // Si hay un error, hacemos un rollback
-                connection.rollback();
+//                connection.rollback();
                 // Enviamos un error 500 al cliente
                 ((HttpServletResponse)servletResponse).sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, e.getMessage());
                 e.printStackTrace();
             }
 
-        } catch (SQLException e) {
+        /*} catch (SQLException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     @Override
