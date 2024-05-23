@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
+    <persistence-unit name="hibernate-jpa-app" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <class>org.tucno.hibernateapp.entities.Cliente</class> <!-- Para que busque solo la clase Cliente -->
+        <class>org.tucno.hibernateapp.entities.Factura</class> <!-- Para que busque solo la clase Factura -->
+        <class>org.tucno.hibernateapp.entities.Direccion</class> <!-- Para que busque solo la clase Producto -->
+        <class>org.tucno.hibernateapp.entities.ClienteDetalle</class> <!-- Para que busque solo la clase Producto -->
+
+        <exclude-unlisted-classes>true</exclude-unlisted-classes> <!-- Para que no busque todas las clases -->
+
+        <properties>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/java_hibernate_curso?serverTimezone=America/Lima"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value="70205787"/>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <property name="hibernate.show_sql" value="true"/>
+
+            <!-- drop-and-create: Elimina la tabla y la vuelve a crear cada vez que se inicia la aplicación -->
+            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
+        </properties>
+    </persistence-unit>
+</persistence>
