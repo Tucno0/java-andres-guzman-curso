@@ -45,8 +45,11 @@ public class Cliente {
     // JoinColumn aquí no va poque es bidireccional y ya está en la otra clase
     private  List<Factura> facturas;
 
-    @OneToOne
-    @JoinColumn(name = "cliente_detalle_id")
+    @OneToOne(
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            mappedBy = "cliente"
+    )
     private ClienteDetalle detalle;
 
     // Constructor vacío: necesario para que JPA pueda instanciar la clase
@@ -134,6 +137,18 @@ public class Cliente {
 
     public void setDetalle(ClienteDetalle detalle) {
         this.detalle = detalle;
+    }
+
+    public void addDetalle(ClienteDetalle detalle) {
+        this.detalle = detalle;
+        detalle.setCliente(this);
+    }
+
+    public void removeDetalle() {
+        if (this.detalle != null) {
+            this.detalle.setCliente(null);
+            this.detalle = null;
+        }
     }
 
     @Override

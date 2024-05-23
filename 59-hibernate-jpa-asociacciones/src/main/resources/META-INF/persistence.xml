@@ -6,7 +6,9 @@
         <class>org.tucno.hibernateapp.entities.Cliente</class> <!-- Para que busque solo la clase Cliente -->
         <class>org.tucno.hibernateapp.entities.Factura</class> <!-- Para que busque solo la clase Factura -->
         <class>org.tucno.hibernateapp.entities.Direccion</class> <!-- Para que busque solo la clase Producto -->
-        <class>org.tucno.hibernateapp.entities.ClienteDetalle</class> <!-- Para que busque solo la clase Producto -->
+        <class>org.tucno.hibernateapp.entities.ClienteDetalle</class> <!-- Para que busque solo la clase ClienteDetalle -->
+        <class>org.tucno.hibernateapp.entities.Curso</class> <!-- Para que busque solo la clase Curso -->
+        <class>org.tucno.hibernateapp.entities.Alumno</class> <!-- Para que busque solo la clase Alumno -->
 
         <exclude-unlisted-classes>true</exclude-unlisted-classes> <!-- Para que no busque todas las clases -->
 

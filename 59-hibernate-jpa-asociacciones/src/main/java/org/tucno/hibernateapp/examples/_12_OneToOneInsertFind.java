@@ -5,7 +5,7 @@ import org.tucno.hibernateapp.entities.Cliente;
 import org.tucno.hibernateapp.entities.ClienteDetalle;
 import org.tucno.hibernateapp.utils.JpaUtil;
 
-public class _11_OneToOneInsertFind {
+public class _12_OneToOneInsertFind {
     public static void main(String[] args) {
         EntityManager entityManager = JpaUtil.getEntityManager();
 
