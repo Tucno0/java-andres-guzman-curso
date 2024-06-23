@@ -1,0 +1,72 @@
+package org.tucno.webapp.jpa.ejb.controllers;
+
+import jakarta.inject.Inject;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import org.tucno.webapp.jpa.ejb.configs.ProductoServicePrincipal;
+import org.tucno.webapp.jpa.ejb.models.Carro;
+import org.tucno.webapp.jpa.ejb.models.ItemCarro;
+import org.tucno.webapp.jpa.ejb.models.entities.Producto;
+import org.tucno.webapp.jpa.ejb.services.ProductoService;
+
+import java.io.IOException;
+import java.util.Optional;
+import java.util.logging.Logger;
+
+// El name sirve para identificar el servlet en el web.xml
+@WebServlet("/carro/agregar")
+public class AgregarCarroServlet extends HttpServlet {
+    private static final Logger logger =  Logger.getLogger("AgregarCarroServlet");
+
+    @Inject // Inyectamos el carro que está en la sesión
+    private Carro carro;
+
+    @Inject
+    @ProductoServicePrincipal
+    private ProductoService productoService;
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // Obtenemos el id del carro desde el request
+        Long id;
+        try {
+            id = Long.parseLong(req.getParameter("id"));
+        } catch (NumberFormatException e) {
+            id = 0L;
+        }
+
+        if (id == 0L) {
+            resp.sendRedirect(req.getContextPath() + "/carro/ver");
+            return;
+        }
+
+        // Obtenemos el producto por el id
+        Optional<Producto> producto = productoService.obtenerPorId(id);
+
+        logger.info("Producto obtenido por id");
+        // Si el producto existe, lo agregamos al carro
+        if (producto.isPresent()) {
+            // Creamos un item de carro con cantidad 1
+            ItemCarro item = new ItemCarro(1, producto.get());
+
+            // Obtenemos la sesion del request
+//            HttpSession session = req.getSession();
+//            Carro carro = (Carro) session.getAttribute("carro");
+
+            // Agregamos el item al carro
+            carro.addItem(item);
+
+            logger.info("Producto agregado al carro");
+        }
+
+        // Redirigimos al carro
+        resp.sendRedirect(req.getContextPath() + "/carro/ver");
+
+//        // Enviamos el producto agregado al carro en formato JSON
+//        resp.setContentType("application/json");
+//        resp.getWriter().write(STR."{\n  \"isPresent\": \{producto.isPresent()}\n}");
+    }
+}
