@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.tucno.webapp.ear</groupId>
+    <artifactId>webapp-ear-ear</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>ear</packaging>
+
+    <properties>
+        <maven.compiler.source>22</maven.compiler.source>
+        <maven.compiler.target>22</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>jakarta.platform</groupId>
+            <artifactId>jakarta.jakartaee-api</artifactId>
+            <version>10.0.0</version>
+            <scope>provided</scope> <!-- provided es para que no se incluya en el archivo .war -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.tucno.webapp.ear</groupId>
+            <artifactId>webapp-ear-ejb</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>ejb</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.tucno.webapp.ear</groupId>
+            <artifactId>webapp-ear-war</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>war</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+
+        <plugins>
+            <!-- https://www.wildfly.org/news/2023/03/09/WildFly-Maven-Plugin/ -->
+            <plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+                <version>4.2.1.Final</version>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration> <!-- Configuración del archivo .ear -->
+                    <modules> <!-- Módulos que componen el archivo .ear -->
+                        <webModule> <!-- Módulo .war -->
+                            <groupId>org.tucno.webapp.ear</groupId>
+                            <artifactId>webapp-ear-war</artifactId>
+                            <contextRoot>/webapp-ear</contextRoot> <!-- Context root de la aplicación -->
+                            <bundleFileName>webapp-ear-war.war</bundleFileName>
+                        </webModule>
+
+                        <ejbModule> <!-- Módulo .ejb -->
+                            <groupId>org.tucno.webapp.ear</groupId>
+                            <artifactId>webapp-ear-ejb</artifactId>
+                            <bundleFileName>webapp-ear-ejb.jar</bundleFileName>
+                        </ejbModule>
+                    </modules>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
