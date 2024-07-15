@@ -1,0 +1,137 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/layouts/main.xhtml">
+    <!-- define sirve para definir un bloque de contenido que se puede reutilizar en otras vistas -->
+    <ui:define name="content">
+        <!-- Metadata sirve para pasar parámetros a la vista-->
+        <f:metadata>
+            <f:viewParam name="id" value="#{productoController.id}"/>
+        </f:metadata>
+
+        <p:card style="max-width: 80%; margin: 0 auto;">
+            <f:facet name="title">
+                <h:outputText value="#{titulo}"/>
+            </f:facet>
+
+            <p:divider/>
+
+            <h:form id="crearForm">
+                <p:commandButton value="#{msg['navbar.texto.crear']} commandButton"
+                                 onclick="PF('dialogForm').show()"
+                                 icon="pi pi-plus-circle"
+                                 update="formProducto"
+                                 class="p-my-2">
+                    <!-- resetInput sirve para limpiar los campos del formulario-->
+                    <p:resetInput target="formProducto"/>
+                </p:commandButton>
+                <p:commandLink value="Crear producto commandLink" action="form.xhtml" class="ui-button-primary"/>
+            </h:form>
+
+            <h:outputText value="#{msg['producto.texto.noexiste']}" rendered="#{empty productoController.listado}"
+                          class="alert alert-warning"/>
+
+            <h:form id="buscarForm">
+                <div class="p-field p-grid p-my-2">
+                    <label for="textoBuscar" class="p-col-fixed" style="width: 100px;">
+                        Buscar
+                    </label>
+                    <div class="p-col">
+                        <p:inputText id="textoBuscar" value="#{productoController.textoBuscar}"
+                                     placeholder="Buscar por nombre o sku"
+                                     label="Buscar">
+                            <p:ajax event="keyup"
+                                    listener="#{productoController.buscar}"
+                                    update="mostrar tabla"/>
+                        </p:inputText>
+
+                        <div class="p-col">
+                            <h:outputText id="mostrar" value="#{productoController.textoBuscar}"/>
+                        </div>
+                    </div>
+                </div>
+            </h:form>
+
+            <p:dataTable id="tabla" value="#{productoController.listado}"
+                         var="prod"
+                         rendered="#{not empty productoController.listado}"
+                         rows="5"
+                         paginator="true"
+                         paginatorPosition="both"
+                         paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                         currentPageReportTemplate="{startRecord}-{endRecord} of {totalRecords} records"
+                         rowsPerPageTemplate="5,10,{ShowAll|'All'}">
+                <p:column headerText="#{msg['producto.id']}">
+                    <h:outputText value="#{prod.id}"/>
+                </p:column>
+
+                <p:column headerText="#{msg['producto.nombre']}">
+                    <h:outputText value="#{prod.nombre}"/>
+                </p:column>
+
+                <p:column headerText="#{msg['producto.precio']}">
+                    <h:outputText value="#{prod.precio}"/>
+                </p:column>
+
+                <p:column headerText="#{msg['producto.sku']}">
+                    <h:outputText value="#{prod.sku}"/>
+                </p:column>
+
+                <p:column headerText="#{msg['producto.categoria']}">
+                    <h:outputText value="#{prod.categoria.nombre}"/>
+                </p:column>
+
+                <p:column headerText="#{msg['producto.fechaRegistro']}">
+                    <h:outputText value="#{prod.fechaRegistro}">
+                        <f:convertDateTime type="localDate" pattern="dd/MM/yyyy"/>
+                    </h:outputText>
+                </p:column>
+
+                <p:column headerText="#{msg['producto.boton.editar']}">
+                    <h:form id="editarForm">
+                        <p:commandButton value="#{msg['producto.boton.editar']}"
+                                         action="#{productoController.editar(prod.id)}"
+                                         onclick="PF('dialogForm').show()"
+                                         icon="pi pi-pencil"
+                                         update="formProducto"
+                                         styleClass="ui-button-success">
+                            <!-- resetInput sirve para limpiar los campos del formulario-->
+                            <p:resetInput target="formProducto"/>
+                        </p:commandButton>
+                    </h:form>
+                </p:column>
+
+<!--                <p:column headerText="#{msg['producto.boton.editar']}">-->
+<!--                    <h:form id="editarForm2">-->
+<!--                        <p:linkButton value="#{msg['producto.boton.editar']}" outcome="form" class="ui-button-info">-->
+<!--                            <f:param name="id" value="#{prod.id}"/>-->
+<!--                        </p:linkButton>-->
+<!--                    </h:form>-->
+<!--                </p:column>-->
+
+                <p:column headerText="#{msg['producto.boton.eliminar']}">
+                    <h:form id="eliminarForm">
+                        <p:commandButton value="#{msg['producto.boton.eliminar']}"
+                                         action="#{productoController.eliminar(prod)}"
+                                         onclick="return confirm('¿Estas seguro que quiere eliminar?')"
+                                         update="tabla"
+                                            icon="pi pi-trash"
+                                         styleClass="ui-button-danger" />
+                    </h:form>
+                </p:column>
+            </p:dataTable>
+
+            <p:dialog header="#{productoController.id != null ? msg['producto.boton.editar'] : msg['producto.boton.crear']} #{msg['producto.texto']}"
+                      widgetVar="dialogForm"
+                      modal="true"
+                      resizable="false"
+                      showEffect="fade"
+                      hideEffect="fade">
+                <p:ajax event="close" listener="#{productoController.closeDialog}" update="formProducto"/>
+                <ui:include src="form.xhtml" />
+            </p:dialog>
+        </p:card>
+    </ui:define>
+</ui:composition>
