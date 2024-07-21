@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
+             version="3.0">
+    <persistence-unit name="ejemploJpa" transaction-type="JTA">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <jta-data-source>java:/MySqlDS</jta-data-source>
+
+        <properties>
+            <!--hibernate.dialect es la clase que se encarga de traducir las consultas de Hibernate a consultas SQL nativas de MySQL -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+            <!--hibernate.hbm2ddl.auto es la propiedad que se encarga de crear la estructura de la base de datos a partir de las entidades de JPA-->
+            <!--hibernate.show_sql es la propiedad que se encarga de mostrar las consultas SQL que Hibernate ejecuta en la consola-->
+            <property name="hibernate.show_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
