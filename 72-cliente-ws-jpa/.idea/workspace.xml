@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e08b078d-dd45-47dd-ac50-42c77f1ba60f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/tucno/clientews/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../72-cliente-ws/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../72-cliente-ws/src/main/java/org/tucno/clientews/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../72-webapp-jaxws-jpa/src/main/java/org/tucno/webapp/jaxws/ProducerEntityManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../72-webapp-jaxws-jpa/src/main/java/org/tucno/webapp/jaxws/repositories/CursoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../72-webapp-jaxws-jpa/src/main/java/org/tucno/webapp/jaxws/repositories/CursoRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../72-webapp-jaxws-jpa/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../72-webapp-jaxws/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../72-webapp-jaxws/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../72-webapp-jaxws/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../72-webapp-jaxws/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../72-webapp-jaxws/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../72-webapp-jaxws/src/main/java/org/tucno/webapp/jaxws/models/Curso.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../72-webapp-jaxws/src/main/java/org/tucno/webapp/jaxws/services/ServicioWs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../72-webapp-jaxws/src/main/java/org/tucno/webapp/jaxws/services/ServicioWsImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../72-webapp-jaxws/src/main/resources/docs/1_jax_ws.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../72-webapp-jaxws/src/main/resources/docs/2_jax_ws_soap.pdf" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Tucno0"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Tucno0/Java_AndresGuzman_Curso.git",
+    "accountId": "73106c53-776c-4b0e-9f88-53c75c5d2048"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2jZ6eUBWXfanKpIcaOvSzMNldGP" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "AtomSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e08b078d-dd45-47dd-ac50-42c77f1ba60f" name="Changes" comment="" />
+      <created>1721582346794</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1721582346794</updated>
+      <workItem from="1721582348964" duration="1088000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
