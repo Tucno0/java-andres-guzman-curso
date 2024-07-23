@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<web-app  xmlns="https://jakarta.ee/xml/ns/jakartaee"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+          version="6.0">
+    <!--context-param: Se utiliza para definir un parámetro de contexto que se puede utilizar en la aplicación web.-->
+    <context-param>
+        <!--param-name: Especifica el nombre del parámetro de contexto.-->
+        <param-name>primefaces.THEME</param-name> <!-- Tema de primefaces -->
+        <!--param-value: Especifica el valor del parámetro de contexto.-->
+        <param-value>arya</param-value> <!-- Tema de primefaces -->
+    </context-param>
+
+    <!--servlet: Se utiliza para definir un servlet en la aplicación web.-->
+    <servlet>
+        <!--servlet-name: Especifica el nombre del servlet.-->
+        <servlet-name>faces-servlet-name</servlet-name> <!-- Nombre del servlet -->
+        <!--servlet-class: Especifica la clase del servlet.-->
+        <servlet-class>jakarta.faces.webapp.FacesServlet</servlet-class> <!-- Clase del servlet -->
+    </servlet>
+
+    <!--servlet-mapping: Se utiliza para asignar un servlet a un patrón de URL específico.-->
+    <servlet-mapping>
+        <!--servlet-name: Especifica el nombre del servlet que se asignará al patrón de URL.-->
+        <servlet-name>faces-servlet-name</servlet-name> <!-- Se asigna el servlet faces-servlet-name -->
+        <!--url-pattern: Especifica el patrón de URL al que se asignará el servlet.-->
+        <url-pattern>*.jsf</url-pattern> <!-- En este caso se asigna a todas las URL que terminen en .jsf -->
+    </servlet-mapping>
+
+    <!--welcome-file-list: Se utiliza para definir una lista de archivos de bienvenida que se pueden utilizar para redirigir a los usuarios a la página de inicio de la aplicación web.-->
+    <welcome-file-list>
+        <!--welcome-file: Especifica el archivo de bienvenida que se utilizará para redirigir a los usuarios a la página de inicio de la aplicación web.-->
+        <welcome-file>/index.jsf</welcome-file> <!-- Página de inicio de la aplicación web se redirige a index.jsf -->
+    </welcome-file-list>
+
+    <!--El login-config sirve para configurar el login de la aplicación web con jaas (Java Authentication and Authorization Service)-->
+    <login-config>
+        <!--auth-method: Especifica el método de autenticación que se utilizará para proteger los recursos web.-->
+        <!--FORM: Se utiliza un formulario de inicio de sesión personalizado.-->
+        <!--BASIC: Se utiliza la autenticación básica HTTP.-->
+        <!--DIGEST: Se utiliza la autenticación de resumen HTTP.-->
+        <!--CLIENT-CERT: Se utiliza la autenticación de certificado de cliente.-->
+<!--        <auth-method>BASIC</auth-method> &lt;!&ndash; FORM, BASIC, DIGEST, CLIENT-CERT &ndash;&gt;-->
+        <auth-method>FORM</auth-method> <!-- FORM, BASIC, DIGEST, CLIENT-CERT -->
+
+        <!--realm-name: Especifica el nombre del reino de seguridad que se utilizará para proteger los recursos web.-->
+        <!--El reino de seguridad es un conjunto de usuarios y roles válidos que se utilizan para autenticar y autorizar a los usuarios.-->
+        <!--ApplicationRealm: Es el reino de seguridad predeterminado que se utiliza para proteger los recursos web.-->
+        <realm-name>ApplicationRealm</realm-name>
+
+        <!--form-login-config: Se utiliza para configurar el formulario de inicio de sesión personalizado que se utilizará para autenticar a los usuarios.-->
+        <form-login-config>
+            <!--form-login-page: Especifica la página de inicio de sesión personalizada que se utilizará para autenticar a los usuarios.-->
+            <form-login-page>/login.jsf</form-login-page> <!-- Página de inicio de sesión personalizada -->
+            <!--form-error-page: Especifica la página de error personalizada que se utilizará para mostrar un mensaje de error si la autenticación falla.-->
+            <form-error-page>/loginError.jsf</form-error-page> <!-- Página de error personalizada -->
+        </form-login-config>
+    </login-config>
+
+    <!--security-constraint: Se utiliza para definir una restricción de seguridad que se puede utilizar para proteger los recursos web.-->
+    <security-constraint>
+        <!--web-resource-collection: Se utiliza para definir una colección de recursos web que se pueden proteger con la restricción de seguridad.-->
+        <web-resource-collection>
+            <!--web-resource-name: Especifica el nombre de la colección de recursos web.-->
+            <web-resource-name>webapp-jsf3-jaas</web-resource-name> <!-- Nombre de la colección de recursos web -->
+            <!--url-pattern: Especifica el patrón de URL de los recursos web que se pueden proteger con la restricción de seguridad.-->
+<!--            <url-pattern>/*</url-pattern> &lt;!&ndash; Se protegen todos los recursos web &ndash;&gt;-->
+            <url-pattern>*.jsf</url-pattern> <!-- Se protegen todos los recursos web que terminen en .jsf -->
+            <!--http-method: Especifica el método HTTP que se puede utilizar para acceder a los recursos web protegidos.-->
+<!--            <http-method>GET</http-method> &lt;!&ndash; Se puede acceder a los recursos web protegidos con el método GET &ndash;&gt;-->
+        </web-resource-collection>
+
+        <!--auth-constraint: Se utiliza para definir una restricción de autenticación que se puede utilizar para proteger los recursos web.-->
+        <auth-constraint>
+            <!--role-name: Especifica el nombre del rol que se requiere para acceder a los recursos web protegidos.-->
+            <role-name>USER</role-name> <!-- Se requiere el rol user para acceder a los recursos web protegidos -->
+            <role-name>ADMIN</role-name> <!-- Se requiere el rol admin para acceder a los recursos web protegidos -->
+        </auth-constraint>
+    </security-constraint>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>recursos permitidos</web-resource-name> <!-- Nombre de la colección de recursos web -->
+            <url-pattern>/javax.faces.resources/*</url-pattern> <!-- Se protegen todos los recursos web que terminen en .jsf -->
+        </web-resource-collection>
+    </security-constraint>
+</web-app>
