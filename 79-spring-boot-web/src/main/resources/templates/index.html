@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://wwww.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title th:text="${titulo}"></title>
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+  </head>
+  
+  <body>
+    <h1 class="color-rojo" th:text="${titulo}"></h1>
+	<h2 class="color-azul">Decorando con estilos css recursos estaticos</h2>
+	
+	<table th:if="${not usuarios.isEmpty()}">
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Apellido</th>
+				<th>Email</th>
+			</tr>
+		</thead>
+		
+		<tbody>
+			<tr th:each="usuario: ${usuarios}">
+				<td th:text="${usuario.nombre}"></td>
+				<td th:text="${usuario.apellido}"></td>
+				<td th:text="${usuario.email}"></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<img th:src="@{/images/gato.jpeg}">
+  </body>
+</html>
