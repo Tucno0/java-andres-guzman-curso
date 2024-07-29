@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Error 500</title>
+</head>
+<body>
+    <h1>Error 500</h1>
+    <p>Ha ocurrido un error interno en el servidor.</p>
+    <p>Por favor, inténtelo de nuevo más tarde.</p>
+
+    <div>
+        <p style="color: red;">Detalles del error:</p>
+
+        <ul>
+            <li>URL: <span th:text="${path}">URL</span></li>
+            <li>Error: <span th:text="${error}">Error</span></li>
+            <li>Mensaje: <span th:text="${message}">Mensaje</span></li>
+            <li>Estatus: <span th:text="${status}">Estatus</span></li>
+            <li>Fecha: <span th:text="${timestamp}">Fecha</span></li>
+            <li>Excepción: <span th:text="${exception}">Excepción</span></li>
+            <li>Causa: <span th:text="${cause}">Causa</span></li>
+        </ul>
+    </div>
+
+    <hr />
+
+    <code>
+        <pre th:text="${trace}">Stack Trace</pre>
+    </code>
+</body>
+</html>
