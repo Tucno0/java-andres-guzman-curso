@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+  <div class="card text-bg-dark mb-3" style="max-width: 50rem;">
+    <h3 class="card-header">{{  title }}</h3>
+
+    <div class="card-body">
+      <form [formGroup]="form">
+        <div class="row mb-3">
+          <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="nombre" formControlName="nombre">
+
+            @if (form.controls.nombre.invalid && form.controls.nombre.touched) {
+              @if (form.controls.nombre.hasError('required')) {
+                <div class="alert alert-danger">El nombre es requerido</div>
+              }
+              @if (form.controls.nombre.hasError('minlength')) {
+                <div class="alert alert-danger">El nombre debe tener al menos 3 caracteres</div>
+              }
+            }
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="apellido" class="col-sm-2 col-form-label">Apellido</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="apellido" formControlName="apellido">
+
+            @if (form.controls.apellido.invalid && form.controls.apellido.touched) {
+              @if (form.controls.apellido.hasError('required')) {
+                <div class="alert alert-danger">El apellido es requerido</div>
+              }
+              @if (form.controls.apellido.hasError('minlength')) {
+                <div class="alert alert-danger">El apellido debe tener al menos 3 caracteres</div>
+              }
+            }
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label for="email" class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="email" formControlName="email">
+
+            @if (form.controls.email.invalid && form.controls.email.touched) {
+              @if (form.controls.email.hasError('required')) {
+                <div class="alert alert-danger">El email es requerido</div>
+              }
+              @if (form.controls.email.hasError('email')) {
+                <div class="alert alert-danger">El email no es válido</div>
+              }
+            }
+          </div>
+        </div>
+
+        @if (cliente) {
+          <button type="submit" class="btn btn-primary" [disabled]="form.invalid" (click)="update(cliente.id)">
+            Actualizar
+          </button>
+        } @else {
+          <button type="submit" class="btn btn-primary" [disabled]="form.invalid" (click)="create()">
+            Crear
+          </button>
+        }
+      </form>
+    </div>
+  </div>
+</div>
