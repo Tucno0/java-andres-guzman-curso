@@ -45,8 +45,8 @@ export class FormComponent {
     }
 
     this.clienteService.create(this.form.value as CreateClienteDto).subscribe({
-      next: (cliente) => {
-        swal.fire('Nuevo cliente', `Cliente ${cliente.nombre} creado con éxito`, 'success')
+      next: (resp) => {
+        swal.fire('Nuevo cliente', `Cliente ${resp.cliente.nombre} creado con éxito`, 'success')
           .then(r => console.log('Sweet alert cerrado', r));
 
         this.router.navigate(['/clientes']).then(r => console.log('Navegación exitosa', r));
@@ -77,8 +77,8 @@ export class FormComponent {
     }
 
     this.clienteService.update(id, this.form.value as CreateClienteDto).subscribe({
-      next: (cliente) => {
-        swal.fire('Cliente actualizado', `Cliente ${cliente.nombre} actualizado con éxito`, 'success')
+      next: (resp) => {
+        swal.fire('Cliente actualizado', `Cliente ${resp.cliente.nombre} actualizado con éxito`, 'success')
           .then(r => console.log('Sweet alert cerrado', r));
 
         this.router.navigate(['/clientes']).then(r => console.log('Navegación exitosa', r));
