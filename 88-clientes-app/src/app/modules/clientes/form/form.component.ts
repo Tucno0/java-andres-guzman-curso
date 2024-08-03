@@ -1,4 +1,4 @@
-import {Component, inject, Input} from '@angular/core';
+import {Component, inject, Input, signal} from '@angular/core';
 import {FormBuilder, ReactiveFormsModule, Validators} from "@angular/forms";
 import {ClienteService} from "@core/services";
 import {CreateClienteDto} from "@clientes/interfaces";
@@ -30,6 +30,7 @@ export class FormComponent {
   private readonly router = inject(Router);
 
   public cliente!: Cliente;
+  public errores = signal<string[]>([]);
 
   public form = this.fb.group({
     nombre: ['', [Validators.required, Validators.minLength(3)]],
@@ -52,6 +53,8 @@ export class FormComponent {
         this.router.navigate(['/clientes']).then(r => console.log('Navegación exitosa', r));
       },
       error: (error) => {
+        console.log('Error', error.error.errores);
+        this.errores.update(err => [...err, error.error.errores]);
         console.error('Error al crear el cliente', error);
       }
     });
@@ -64,6 +67,8 @@ export class FormComponent {
         this.cliente = cliente;
       },
       error: (error) => {
+        console.log('Error', error.error.errores);
+        this.errores.update(err => [...err, error.error.errores]);
         console.error('Error al obtener el cliente', error);
       }
     });

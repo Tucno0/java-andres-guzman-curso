@@ -1,4 +1,11 @@
 <div class="row justify-content-center">
+
+  @for ( error of errores(); track $index ) {
+    <ul class="alert alert-danger">
+      <li>{{ error }}</li>
+    </ul>
+  }
+
   <div class="card text-bg-dark mb-3" style="max-width: 50rem;">
     <h3 class="card-header">{{  title }}</h3>
 

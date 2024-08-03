@@ -36,6 +36,10 @@ export class ClienteService {
     return this.http.post<any>(`${this.apiUrl}/clientes`, createClienteDto)
       .pipe(
         catchError((error: HttpErrorResponse) => {
+          if (error.status === 400) {
+            return throwError( () => error );
+          }
+
           swal.fire('Error al crear', error.error.mensaje, 'error').then();
           return throwError( () => error );
         })
@@ -46,6 +50,9 @@ export class ClienteService {
     return this.http.put<any>(`${this.apiUrl}/clientes/${id}`, updateClienteDto)
       .pipe(
         catchError((error: HttpErrorResponse) => {
+          if (error.status === 400) {
+            return throwError( () => error );
+          }
           swal.fire('Error al actualizar', error.error.mensaje, 'error').then();
           return throwError( () => error );
         })

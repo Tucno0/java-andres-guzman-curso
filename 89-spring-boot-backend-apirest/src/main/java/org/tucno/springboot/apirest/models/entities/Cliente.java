@@ -1,6 +1,7 @@
 package org.tucno.springboot.apirest.models.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -14,10 +15,16 @@ public class Cliente implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotEmpty(message = "no puede estar vacío")
+    @Size(min = 4, max = 12, message = "el tamaño tiene que estar entre 4 y 12")
     @Column(nullable = false)
     private String nombre;
+
+    @NotEmpty(message = "no puede estar vacío")
     private String apellido;
 
+    @NotEmpty(message = "no puede estar vacío")
+    @Email(message = "no es una dirección de correo bien formada")
     @Column(nullable = false, unique = true)
     private String email;
 

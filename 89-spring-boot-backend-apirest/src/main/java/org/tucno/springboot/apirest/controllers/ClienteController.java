@@ -1,8 +1,10 @@
 package org.tucno.springboot.apirest.controllers;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.tucno.springboot.apirest.models.entities.Cliente;
 import org.tucno.springboot.apirest.models.services.ClienteService;
@@ -69,10 +71,19 @@ public class ClienteController {
 
     @PostMapping("/clientes")
     @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<?> addCliente(@RequestBody Cliente cliente) {
+    public ResponseEntity<?> addCliente(@Valid @RequestBody Cliente cliente, BindingResult result) {
         Cliente nuevoCliente = null;
-
         Map<String, Object> response = new HashMap<>();
+
+        // Si hay errores en la validación, se recorren y se añaden al objeto response.
+        if (result.hasErrors()) {
+            List<String> errors = result.getFieldErrors().stream()
+                    .map(err -> "El campo '" + err.getField() + "' " + err.getDefaultMessage())
+                    .toList();
+
+            response.put("errores", errors);
+            return new ResponseEntity<Map<String, Object>>(response, HttpStatus.BAD_REQUEST);
+        }
 
         try {
             nuevoCliente = clienteService.save(cliente);
@@ -100,11 +111,21 @@ public class ClienteController {
 //    }
 
     @PutMapping("/clientes/{id}")
-    public ResponseEntity<?> updateCliente(@RequestBody Cliente cliente, @PathVariable Long id) {
+    public ResponseEntity<?> updateCliente(@Valid @RequestBody Cliente cliente, @PathVariable Long id, BindingResult result) {
         Cliente clienteActual = clienteService.findById(id);
         Cliente clienteActualizado = null;
 
         Map<String, Object> response = new HashMap<>();
+
+        // Si hay errores en la validación, se recorren y se añaden al objeto response.
+        if (result.hasErrors()) {
+            List<String> errors = result.getFieldErrors().stream()
+                    .map(err -> "El campo '" + err.getField() + "' " + err.getDefaultMessage())
+                    .toList();
+
+            response.put("errores", errors);
+            return new ResponseEntity<Map<String, Object>>(response, HttpStatus.BAD_REQUEST);
+        }
 
         if (clienteActual == null) {
             response.put("mensaje", "Error: no se pudo editar, el cliente ID: ".concat(id.toString().concat(" no existe en la base de datos.")));
